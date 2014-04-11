@@ -1,5 +1,9 @@
 'use strict';
 
+
+var ResourceSchema = {};
+var InfrastructureSchema = {};
+
 /**
  * Module dependencies.
  */
@@ -13,6 +17,10 @@ var EstimateSchema = new Schema({
   created: {
     type: Date,
     default: Date.now
+  },
+  user: {
+    type: Schema.ObjectId,
+    ref: 'User'
   },
   application: {
     type: String,
@@ -45,7 +53,7 @@ var EstimateSchema = new Schema({
 /**
  * Resource Schema
  */
-var ResourceSchema = new Schema({
+ResourceSchema = new Schema({
   department: {
     type: String,
     default: '',
@@ -80,7 +88,7 @@ var ResourceSchema = new Schema({
 /**
  * Infrastructure Schema
  */
-var InfrastructureSchema = new Schema({
+InfrastructureSchema = new Schema({
   department: {
     type: String,
     default: '',
