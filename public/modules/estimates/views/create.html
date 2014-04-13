@@ -35,7 +35,7 @@
                for="estimate.description">Description</label>
 
         <div class="controls">
-          <input ng-model="estimate.description"
+          <input ng-model="estimateForm.description"
                  id="estimate.description"
                  class="form-control"
                  placeholder="Description"></textarea>
@@ -54,7 +54,7 @@
         <label class="control-label" for="resource.estimator">Estimator</label>
 
         <div class="controls">
-          <input ng-model="resource.estimator" id="resource.estimator"
+          <input ng-model="resourceForm.estimator" id="resource.estimator"
                  class="form-control"
                  placeholder="Estimator"></textarea>
         </div>
@@ -62,7 +62,7 @@
                for="resource.estimate">Estimate</label>
 
         <div class="input-prepend input-append">
-          <input class="span2" ng-model="resource.estimate"
+          <input class="span2" ng-model="resourceForm.estimate"
                  id="resource.estimate" type="number" placeholder="0">
           <span class="add-on">hrs.</span>
         </div>
@@ -71,7 +71,7 @@
                for="resource.description">Description</label>
 
         <div class="controls">
-          <input ng-model="resource.description" id="resource.description"
+          <input ng-model="resourceForm.description" id="resource.description"
                  class="form-control"
                  placeholder="Description"></textarea>
         </div>
@@ -79,7 +79,7 @@
                for="resource.notes">Notes</label>
 
         <div class="controls">
-          <textarea ng-model="resource.notes" id="resource.notes"
+          <textarea ng-model="resourceForm.notes" id="resource.notes"
                     class="form-control" cols="30" rows="10"
                     placeholder="Notes"></textarea>
         </div>
@@ -90,7 +90,7 @@
                for="infrastructure.department">Department</label>
 
         <div class="controls">
-          <select ng-model="formValues.department"
+          <select ng-model="infrastructureForm.department"
                   id="infrastructure.department"
                   ng-options="obj.department for obj in formValues.departments"></select>
         </div>
@@ -98,7 +98,7 @@
                for="infrastructure.estimator">Estimator</label>
 
         <div class="controls">
-          <input ng-model="infrastructure.estimator"
+          <input ng-model="infrastructureForm.estimator"
                  id="infrastructure.estimator"
                  class="form-control"
                  placeholder="Estimator"></textarea>
@@ -107,7 +107,7 @@
                for="infrastructure.estimate">Estimate</label>
 
         <div class="input-prepend input-append">
-          <input class="span2" ng-model="infrastructure.estimate"
+          <input class="span2" ng-model="infrastructureForm.estimate"
                  id="infrastructure.estimate" type="number" placeholder="0">
           <span class="add-on">hrs.</span>
         </div>
@@ -118,7 +118,7 @@
         <div class="input-prepend input-append">
           <span class="add-on">$</span>
           <input class="span2"
-                 ng-model="infrastructure.cost"
+                 ng-model="infrastructureForm.cost"
                  id="infrastructure.cost"
                  type="number" placeholder="0">
         </div>
@@ -127,7 +127,7 @@
                for="infrastructure.description">Description</label>
 
         <div class="controls">
-          <input ng-model="infrastructure.description"
+          <input ng-model="infrastructureForm.description"
                  id="infrastructure.description"
                  class="form-control"
                  placeholder="Description"></textarea>
@@ -136,7 +136,8 @@
                for="infrastructure.notes">Notes</label>
 
         <div class="controls">
-          <textarea ng-model="infrastructure.notes" id="infrastructure.notes"
+          <textarea ng-model="infrastructureForm.notes"
+                    id="infrastructure.notes"
                     class="form-control" cols="30" rows="10"
                     placeholder="Notes"></textarea>
         </div>

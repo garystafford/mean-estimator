@@ -8,7 +8,7 @@ angular.module('estimates').controller('EstimatesController', ['$scope', '$state
       var resource = {
         department: this.resourceForm.department.department,
         estimator: this.resourceForm.estimator,
-        description: this.resource.description,
+        description: this.resourceForm.description,
         estimate: this.resourceForm.estimate,
         notes: this.resourceForm.notes
       };
@@ -27,10 +27,10 @@ angular.module('estimates').controller('EstimatesController', ['$scope', '$state
         user: this.user,
         application: this.estimateForm.application.application,
         environment: this.estimateForm.environment.environment,
-        description: this.estimate.description,
+        description: this.estimateForm.description,
         type: this.estimateForm.type.type,
-        resource: resource,
-        infrastructure: infrastructure
+        resource: [resourceForm],
+        infrastructure: [infrastructureForm]
       });
 
       estimate.$save(function (response) {
@@ -105,7 +105,6 @@ angular.module('estimates').controller('EstimatesController', ['$scope', '$state
       {type: 'Update'}
     ];
 
-    $scope.estimateForm.department = "";
     $scope.resourceForm.department = "";
     $scope.infrastructureForm.department = "";
 
