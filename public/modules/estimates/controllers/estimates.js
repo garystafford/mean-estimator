@@ -8,10 +8,10 @@ angular.module('estimates').controller('EstimatesController', ['$scope', '$state
       var estimate = new Estimates({
         created: this.estimateForm.created,
         user: this.estimateForm.user,
-        application: this.estimateForm.application.application,
-        environment: this.estimateForm.environment.environment,
+        application: this.estimateForm.application,
+        environment: this.estimateForm.environment,
         description: this.estimateForm.description,
-        type: this.estimateForm.type.type,
+        type: this.estimateForm.type,
         resources: [this.resourceForm],
         infrastructures: [this.infrastructureForm]
       });
@@ -96,30 +96,9 @@ angular.module('estimates').controller('EstimatesController', ['$scope', '$state
     };
 
     $scope.formValues = {
-      types: [
-        {type: 'Add'},
-        {type: 'Update'}
-      ],
-      environments: [
-        {environment: 'Environment A'},
-        {environment: 'Environment B'},
-        {environment: 'Environment C'},
-        {environment: 'Environment D'},
-        {environment: 'Environment E'}
-      ],
-      departments: [
-        {department: 'Department 1'},
-        {department: 'Department 2'},
-        {department: 'Department 3'},
-        {department: 'Department 4'},
-        {department: 'Department 5'}
-      ],
-      applications: [
-        {application: 'Application 1'},
-        {application: 'Application 2'},
-        {application: 'Application 3'},
-        {application: 'Application 4'},
-        {application: 'Application 5'}
-      ]
+      types: [ 'Add', 'Update' ],
+      environments: [ 'Environment A', 'Environment B', 'Environment C', 'Environment D', 'Environment E' ],
+      departments: [ 'Department 1', 'Department 2', 'Department 3', 'Department 4', 'Department 5' ],
+      applications: [ 'Application 1', 'Application 2', 'Application 3', 'Application 4', 'Application 5' ]
     };
   }]);

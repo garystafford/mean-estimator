@@ -36,4 +36,13 @@
     </tr>
   </table>
   </p>
+  <ul>
+    <li ng-repeat="resources in estimate">
+      {{resources[0].department.department}}<br/>
+      {{resources[0].estimator}}<br/>
+      {{resources[0].description}}<br/>
+      {{resources[0].estimate}}<br/>
+      {{resources[0].notes}}<br/>
+    </li>
+  </ul>
 </section>

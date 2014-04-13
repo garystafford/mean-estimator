@@ -14,7 +14,7 @@
         <div class="controls">
           <select ng-model="estimateForm.application"
                   id="estimateForm.application"
-                  ng-options="obj.application for obj in formValues.applications"></select>
+                  ng-options="application for application in formValues.applications"></select>
         </div>
         <label class="control-label"
                for="estimateForm.environment">Environment</label>
@@ -22,14 +22,14 @@
         <div class="controls">
           <select ng-model="estimateForm.environment"
                   id="estimateForm.environment"
-                  ng-options="obj.environment for obj in formValues.environments"></select>
+                  ng-options="environment for environment in formValues.environments"></select>
         </div>
         <label class="control-label"
-               for="estimateForm.type">Type</label>
+               for="estimateForm.type">Estimate Type</label>
 
         <div class="controls">
           <select ng-model="estimateForm.type" id="estimateForm.type"
-                  ng-options="obj.type for obj in formValues.types"></select>
+                  ng-options="type for type in formValues.types"></select>
         </div>
         <label class="control-label"
                for="estimateForm.description">Description</label>
@@ -38,7 +38,7 @@
           <input ng-model="estimateForm.description"
                  id="estimateForm.description"
                  class="form-control"
-                 placeholder="Description"></textarea>
+                 placeholder="Description"/>
         </div>
       </div>
       <div class="col-md-8 main-area">
@@ -49,7 +49,7 @@
         <div class="controls">
           <select ng-model="resourceForm.department"
                   id="resourceForm.department"
-                  ng-options="obj.department for obj in formValues.departments"></select>
+                  ng-options="department for department in formValues.departments"></select>
         </div>
         <label class="control-label"
                for="resourceForm.estimator">Estimator</label>
@@ -57,14 +57,14 @@
         <div class="controls">
           <input ng-model="resourceForm.estimator" id="resourceForm.estimator"
                  class="form-control"
-                 placeholder="Estimator"></textarea>
+                 placeholder="Estimator"/>
         </div>
         <label class="control-label"
                for="resourceForm.estimate">Estimate</label>
 
         <div class="input-prepend input-append">
           <input class="span2" ng-model="resourceForm.estimate"
-                 id="resourceForm.estimate" type="number" placeholder="0">
+                 id="resourceForm.estimate" type="number" placeholder="0"/>
           <span class="add-on">hrs.</span>
         </div>
 
@@ -75,7 +75,7 @@
           <input ng-model="resourceForm.description"
                  id="resourceForm.description"
                  class="form-control"
-                 placeholder="Description"></textarea>
+                 placeholder="Description"/>
         </div>
         <label class="control-label"
                for="resourceForm.notes">Notes</label>
@@ -94,7 +94,7 @@
         <div class="controls">
           <select ng-model="infrastructureForm.department"
                   id="infrastructureForm.department"
-                  ng-options="obj.department for obj in formValues.departments"></select>
+                  ng-options="department for department in formValues.departments"></select>
         </div>
         <label class="control-label"
                for="infrastructureForm.estimator">Estimator</label>
@@ -103,7 +103,7 @@
           <input ng-model="infrastructureForm.estimator"
                  id="infrastructureForm.estimator"
                  class="form-control"
-                 placeholder="Estimator"></textarea>
+                 placeholder="Estimator"/>
         </div>
         <label class="control-label"
                for="infrastructureForm.estimate">Estimate</label>
@@ -122,7 +122,7 @@
           <input class="span2"
                  ng-model="infrastructureForm.cost"
                  id="infrastructureForm.cost"
-                 type="number" placeholder="0">
+                 type="number" placeholder="0"/>
         </div>
 
         <label class="control-label"
@@ -132,7 +132,7 @@
           <input ng-model="infrastructureForm.description"
                  id="infrastructureForm.description"
                  class="form-control"
-                 placeholder="Description"></textarea>
+                 placeholder="Description"/>
         </div>
         <label class="control-label"
                for="infrastructureForm.notes">Notes</label>
@@ -149,5 +149,4 @@
       </div>
     </fieldset>
   </form>
-  </div>
 </section>

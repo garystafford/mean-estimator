@@ -5,7 +5,7 @@
     <div class="list-group">
         <a data-ng-repeat="estimate in estimates" data-ng-href="#!/estimates/{{estimate._id}}" class="list-group-item">
             <small class="list-group-item-text">{{estimate.created | date:'medium'}} / {{estimate.user.displayName}}</small>
-            <h4 class="list-group-item-heading">{{estimate.application}}</h4>
+            <h4 class="list-group-item-heading">{{estimate.application}} ({{estimate.environment}})</h4>
             <p class="list-group-item-text">{{estimate.description}}</p>
         </a>
     </div>
