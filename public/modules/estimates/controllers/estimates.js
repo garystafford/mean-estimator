@@ -92,11 +92,11 @@ angular.module('estimates').controller('EstimatesController', ['$scope', '$state
 
     $scope.estimateForm.environment = "";
     $scope.formValues.environments = [
-      {environment: 'N2A'},
-      {environment: 'N2B'},
-      {environment: 'N2C'},
-      {environment: 'DVS3'},
-      {environment: 'DVS4'}
+      {environment: 'Environment A'},
+      {environment: 'Environment B'},
+      {environment: 'Environment C'},
+      {environment: 'Environment D'},
+      {environment: 'Environment E'}
     ];
 
     $scope.estimateForm.type = "";
@@ -109,38 +109,20 @@ angular.module('estimates').controller('EstimatesController', ['$scope', '$state
     $scope.infrastructureForm.department = "";
 
     $scope.formValues.departments = [
-      {department: 'Data and Systems Security'},
-      {department: 'Data Center Operations (Tidal)'},
-      {department: 'DBAs - Exadata/Other'},
-      {department: 'DBAs - MSSQL'},
-      {department: 'DBAs - Oracle'},
-      {department: 'Enterprise Build Automation (EBA)'},
-      {department: 'Infrastructure (Systems Administration)'},
-      {department: 'Infrastructure (Windows Server)'},
-      {department: 'Network Services'},
-      {department: 'Virtualization and Storage'},
-      {department: 'Web Operations/Engineering'},
+      {department: 'Department 1'},
+      {department: 'Department 2'},
+      {department: 'Department 3'},
+      {department: 'Department 4'},
+      {department: 'Department 5'}
     ];
 
     $scope.estimateForm.application = "";
     $scope.formValues.applications = [
-      {application: 'Core'},
-      {application: 'Core Advanced (CA)'},
-      {application: 'Electronic Network Services (ENS)'},
-      {application: 'Enterprise Reporting Database (ERD)'},
-      {application: 'Enterprise Data Warehouse (EDW)'},
-      {application: 'Human Resource Services (HRS)/Paychex Distribution Center (PDC)'},
-      {application: 'Human Resources Online (HRO)'},
-      {application: 'HRO-IA Adapter (CA Integration)'},
-      {application: 'Mobility'},
-      {application: 'Online Reporting System (ORS)'},
-      {application: 'Oracle Service Bus (OSB)/Enterprise Service'},
-      {application: 'PNG SSO'},
-      {application: 'PNGSSO Coherence'},
-      {application: 'Report Center'},
-      {application: 'Single Sign-on (SSO)/One Source Solution Portal (OSSP)'},
-      {application: 'Time and Labor Online (TLO)'},
-      {application: 'SurePayroll'},
+      {application: 'Application 1'},
+      {application: 'Application 2'},
+      {application: 'Application 3'},
+      {application: 'Application 4'},
+      {application: 'Application 5'}
     ];
   }
 ]);
