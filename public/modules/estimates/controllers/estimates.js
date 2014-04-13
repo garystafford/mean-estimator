@@ -4,33 +4,15 @@ angular.module('estimates').controller('EstimatesController', ['$scope', '$state
   function ($scope, $stateParams, $location, Authentication, Estimates) {
     $scope.authentication = Authentication;
     $scope.create = function () {
-
-      var resource = {
-        department: this.resourceForm.department.department,
-        estimator: this.resourceForm.estimator,
-        description: this.resourceForm.description,
-        estimate: this.resourceForm.estimate,
-        notes: this.resourceForm.notes
-      };
-
-      var infrastructure = {
-        department: this.infrastructureForm.department.department,
-        estimator: this.infrastructureForm.estimator,
-        description: this.infrastructureForm.description,
-        estimate: this.infrastructureForm.estimate,
-        cost: this.infrastructureForm.cost,
-        notes: this.infrastructureForm.notes
-      };
-
       var estimate = new Estimates({
-        created: new Date(),
-        user: this.user,
+        created: this.estimateForm.created,
+        user: this.estimateForm.user,
         application: this.estimateForm.application.application,
         environment: this.estimateForm.environment.environment,
         description: this.estimateForm.description,
         type: this.estimateForm.type.type,
-        resource: [resourceForm],
-        infrastructure: [infrastructureForm]
+        resources: [this.resourceForm],
+        infrastructures: [this.infrastructureForm]
       });
 
       estimate.$save(function (response) {
@@ -84,45 +66,59 @@ angular.module('estimates').controller('EstimatesController', ['$scope', '$state
       });
     };
 
+    $scope.resourceForm = {
+      department: '',
+      estimator: '',
+      description: '',
+      estimate: '',
+      notes: ''
+    };
 
-    $scope.formValues = {};
-    $scope.estimateForm = {};
-    $scope.resourceForm = {};
-    $scope.infrastructureForm = {};
+    $scope.infrastructureForm = {
+      department: '',
+      estimator: '',
+      description: '',
+      estimate: '',
+      cost: '',
+      notes: ''
+    };
 
-    $scope.estimateForm.environment = "";
-    $scope.formValues.environments = [
-      {environment: 'Environment A'},
-      {environment: 'Environment B'},
-      {environment: 'Environment C'},
-      {environment: 'Environment D'},
-      {environment: 'Environment E'}
-    ];
+    $scope.estimateForm = {
+      created: new Date(),
+      user: this.user,
+      application: '',
+      environment: '',
+      description: '',
+      type: '',
+      resource: [],
+      infrastructure: []
+    };
 
-    $scope.estimateForm.type = "";
-    $scope.formValues.types = [
-      {type: 'Add'},
-      {type: 'Update'}
-    ];
-
-    $scope.resourceForm.department = "";
-    $scope.infrastructureForm.department = "";
-
-    $scope.formValues.departments = [
-      {department: 'Department 1'},
-      {department: 'Department 2'},
-      {department: 'Department 3'},
-      {department: 'Department 4'},
-      {department: 'Department 5'}
-    ];
-
-    $scope.estimateForm.application = "";
-    $scope.formValues.applications = [
-      {application: 'Application 1'},
-      {application: 'Application 2'},
-      {application: 'Application 3'},
-      {application: 'Application 4'},
-      {application: 'Application 5'}
-    ];
-  }
-]);
+    $scope.formValues = {
+      types: [
+        {type: 'Add'},
+        {type: 'Update'}
+      ],
+      environments: [
+        {environment: 'Environment A'},
+        {environment: 'Environment B'},
+        {environment: 'Environment C'},
+        {environment: 'Environment D'},
+        {environment: 'Environment E'}
+      ],
+      departments: [
+        {department: 'Department 1'},
+        {department: 'Department 2'},
+        {department: 'Department 3'},
+        {department: 'Department 4'},
+        {department: 'Department 5'}
+      ],
+      applications: [
+        {application: 'Application 1'},
+        {application: 'Application 2'},
+        {application: 'Application 3'},
+        {application: 'Application 4'},
+        {application: 'Application 5'}
+      ]
+    };
+  }]);

@@ -46,7 +46,7 @@ var EstimateSchema = new Schema({
     required: 'Type cannot be blank'
   },
   resources: [Resource.schema],
-  infrastructure: [Infrastructure.schema]
+  infrastructures: [Infrastructure.schema]
 });
 
 mongoose.model('Estimate', EstimateSchema);

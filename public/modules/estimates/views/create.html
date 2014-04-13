@@ -9,34 +9,34 @@
       <div class="col-md-8 main-area">
         <h3>Estimate</h3>
         <label class="control-label"
-               for="estimate.application">Application</label>
+               for="estimateForm.application">Application</label>
 
         <div class="controls">
           <select ng-model="estimateForm.application"
-                  id="estimate.application"
+                  id="estimateForm.application"
                   ng-options="obj.application for obj in formValues.applications"></select>
         </div>
         <label class="control-label"
-               for="estimate.environment">Environment</label>
+               for="estimateForm.environment">Environment</label>
 
         <div class="controls">
           <select ng-model="estimateForm.environment"
-                  id="estimate.environment"
+                  id="estimateForm.environment"
                   ng-options="obj.environment for obj in formValues.environments"></select>
         </div>
         <label class="control-label"
-               for="estimate.type">Type</label>
+               for="estimateForm.type">Type</label>
 
         <div class="controls">
-          <select ng-model="estimateForm.type" id="estimate.type"
+          <select ng-model="estimateForm.type" id="estimateForm.type"
                   ng-options="obj.type for obj in formValues.types"></select>
         </div>
         <label class="control-label"
-               for="estimate.description">Description</label>
+               for="estimateForm.description">Description</label>
 
         <div class="controls">
           <input ng-model="estimateForm.description"
-                 id="estimate.description"
+                 id="estimateForm.description"
                  class="form-control"
                  placeholder="Description"></textarea>
         </div>
@@ -44,42 +44,44 @@
       <div class="col-md-8 main-area">
         <h3>Resources</h3>
         <label class="control-label"
-               for="resource.department">Department</label>
+               for="resourceForm.department">Department</label>
 
         <div class="controls">
           <select ng-model="resourceForm.department"
-                  id="resource.department"
+                  id="resourceForm.department"
                   ng-options="obj.department for obj in formValues.departments"></select>
         </div>
-        <label class="control-label" for="resource.estimator">Estimator</label>
+        <label class="control-label"
+               for="resourceForm.estimator">Estimator</label>
 
         <div class="controls">
-          <input ng-model="resourceForm.estimator" id="resource.estimator"
+          <input ng-model="resourceForm.estimator" id="resourceForm.estimator"
                  class="form-control"
                  placeholder="Estimator"></textarea>
         </div>
         <label class="control-label"
-               for="resource.estimate">Estimate</label>
+               for="resourceForm.estimate">Estimate</label>
 
         <div class="input-prepend input-append">
           <input class="span2" ng-model="resourceForm.estimate"
-                 id="resource.estimate" type="number" placeholder="0">
+                 id="resourceForm.estimate" type="number" placeholder="0">
           <span class="add-on">hrs.</span>
         </div>
 
         <label class="control-label"
-               for="resource.description">Description</label>
+               for="resourceForm.description">Description</label>
 
         <div class="controls">
-          <input ng-model="resourceForm.description" id="resource.description"
+          <input ng-model="resourceForm.description"
+                 id="resourceForm.description"
                  class="form-control"
                  placeholder="Description"></textarea>
         </div>
         <label class="control-label"
-               for="resource.notes">Notes</label>
+               for="resourceForm.notes">Notes</label>
 
         <div class="controls">
-          <textarea ng-model="resourceForm.notes" id="resource.notes"
+          <textarea ng-model="resourceForm.notes" id="resourceForm.notes"
                     class="form-control" cols="30" rows="10"
                     placeholder="Notes"></textarea>
         </div>
@@ -87,57 +89,57 @@
       <div class="col-md-8 main-area">
         <h3>Infrastructure</h3>
         <label class="control-label"
-               for="infrastructure.department">Department</label>
+               for="infrastructureForm.department">Department</label>
 
         <div class="controls">
           <select ng-model="infrastructureForm.department"
-                  id="infrastructure.department"
+                  id="infrastructureForm.department"
                   ng-options="obj.department for obj in formValues.departments"></select>
         </div>
         <label class="control-label"
-               for="infrastructure.estimator">Estimator</label>
+               for="infrastructureForm.estimator">Estimator</label>
 
         <div class="controls">
           <input ng-model="infrastructureForm.estimator"
-                 id="infrastructure.estimator"
+                 id="infrastructureForm.estimator"
                  class="form-control"
                  placeholder="Estimator"></textarea>
         </div>
         <label class="control-label"
-               for="infrastructure.estimate">Estimate</label>
+               for="infrastructureForm.estimate">Estimate</label>
 
         <div class="input-prepend input-append">
           <input class="span2" ng-model="infrastructureForm.estimate"
-                 id="infrastructure.estimate" type="number" placeholder="0">
+                 id="infrastructureForm.estimate" type="number" placeholder="0">
           <span class="add-on">hrs.</span>
         </div>
 
         <label class="control-label"
-               for="infrastructure.cost">Cost</label>
+               for="infrastructureForm.cost">Cost</label>
 
         <div class="input-prepend input-append">
           <span class="add-on">$</span>
           <input class="span2"
                  ng-model="infrastructureForm.cost"
-                 id="infrastructure.cost"
+                 id="infrastructureForm.cost"
                  type="number" placeholder="0">
         </div>
 
         <label class="control-label"
-               for="infrastructure.description">Description</label>
+               for="infrastructureForm.description">Description</label>
 
         <div class="controls">
           <input ng-model="infrastructureForm.description"
-                 id="infrastructure.description"
+                 id="infrastructureForm.description"
                  class="form-control"
                  placeholder="Description"></textarea>
         </div>
         <label class="control-label"
-               for="infrastructure.notes">Notes</label>
+               for="infrastructureForm.notes">Notes</label>
 
         <div class="controls">
           <textarea ng-model="infrastructureForm.notes"
-                    id="infrastructure.notes"
+                    id="infrastructureForm.notes"
                     class="form-control" cols="30" rows="10"
                     placeholder="Notes"></textarea>
         </div>
