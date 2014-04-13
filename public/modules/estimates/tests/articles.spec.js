@@ -1,8 +1,8 @@
 'use strict';
 
-(function() {
+(function () {
   // Estimates Controller Spec
-  describe('EstimatesController', function() {
+  describe('EstimatesController', function () {
     // Initialize global variables
     var EstimatesController,
       scope,
@@ -15,11 +15,11 @@
     // the responses exactly. To solve the problem, we define a new toEqualData Jasmine matcher.
     // When the toEqualData matcher compares two objects, it takes only object properties into
     // account and ignores methods.
-    beforeEach(function() {
+    beforeEach(function () {
       jasmine.addMatchers({
-        toEqualData: function(util, customEqualityTesters) {
+        toEqualData: function (util, customEqualityTesters) {
           return {
-            compare: function(actual, expected) {
+            compare: function (actual, expected) {
               return {
                 pass: angular.equals(actual, expected)
               };
@@ -35,7 +35,7 @@
     // The injector ignores leading and trailing underscores here (i.e. _$httpBackend_).
     // This allows us to inject a service but then attach it to a variable
     // with the same name as the service.
-    beforeEach(inject(function($controller, $rootScope, _$location_, _$stateParams_, _$httpBackend_) {
+    beforeEach(inject(function ($controller, $rootScope, _$location_, _$stateParams_, _$httpBackend_) {
       // Set a new global scope
       scope = $rootScope.$new();
 
@@ -50,7 +50,7 @@
       });
     }));
 
-    it('$scope.find() should create an array with at least one estimate object fetched from XHR', inject(function(Estimates) {
+    it('$scope.find() should create an array with at least one estimate object fetched from XHR', inject(function (Estimates) {
       // Create sample estimate using the Estimates service
       var sampleEstimate = new Estimates({
         title: 'An Estimate about MEAN',
@@ -71,7 +71,7 @@
       expect(scope.estimates).toEqualData(sampleEstimates);
     }));
 
-    it('$scope.findOne() should create an array with one estimate object fetched from XHR using a estimateId URL parameter', inject(function(Estimates) {
+    it('$scope.findOne() should create an array with one estimate object fetched from XHR using a estimateId URL parameter', inject(function (Estimates) {
       // Define a sample estimate object
       var sampleEstimate = new Estimates({
         title: 'An Estimate about MEAN',
@@ -92,7 +92,7 @@
       expect(scope.estimate).toEqualData(sampleEstimate);
     }));
 
-    it('$scope.create() with valid form data should send a POST request with the form input values and then locate to new object URL', inject(function(Estimates) {
+    it('$scope.create() with valid form data should send a POST request with the form input values and then locate to new object URL', inject(function (Estimates) {
       // Create a sample estimate object
       var sampleEstimatePostData = new Estimates({
         title: 'An Estimate about MEAN',
@@ -125,7 +125,7 @@
       expect($location.path()).toBe('/estimates/' + sampleEstimateResponse._id);
     }));
 
-    it('$scope.update() should update a valid estimate', inject(function(Estimates) {
+    it('$scope.update() should update a valid estimate', inject(function (Estimates) {
       // Define a sample estimate put data
       var sampleEstimatePutData = new Estimates({
         _id: '525cf20451979dea2c000001',
@@ -147,7 +147,7 @@
       expect($location.path()).toBe('/estimates/' + sampleEstimatePutData._id);
     }));
 
-    it('$scope.remove() should send a DELETE request with a valid estimateId and remove the estimate from the scope', inject(function(Estimates) {
+    it('$scope.remove() should send a DELETE request with a valid estimateId and remove the estimate from the scope', inject(function (Estimates) {
       // Create new estimate object
       var sampleEstimate = new Estimates({
         _id: '525a8422f6d0f87f0e407a33'

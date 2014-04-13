@@ -1,26 +1,150 @@
-<section data-ng-controller="EstimatesController">
-    <div class="page-header">
-        <h1>New Estimate</h1>
-    </div>
-    <div class="col-md-12">
-        <form class="form-horizontal" data-ng-submit="create()">
-            <fieldset>
-                <div class="form-group">
-                    <label class="control-label" for="title">Application</label>
-                    <div class="controls">
-                        <input type="text" data-ng-model="application" id="title" class="form-control" placeholder="Application" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="description">Description</label>
-                    <div class="controls">
-                        <textarea data-ng-model="description" id="description" class="form-control" cols="30" rows="10" placeholder="Description"></textarea>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <input type="submit" class="btn btn-default">
-                </div>
-            </fieldset>
-        </form>
-    </div>
+<section ng-controller="EstimatesController">
+  <div class="page-header">
+    <h1>New Estimate</h1>
+  </div>
+  <form class="form-horizontal" ng-submit="create()">
+    <fieldset>
+      <div class="form-group">
+      </div>
+      <div class="col-md-8 main-area">
+        <h3>Estimate</h3>
+        <label class="control-label"
+               for="estimate.application">Application</label>
+
+        <div class="controls">
+          <select ng-model="estimateForm.application"
+                  id="estimate.application"
+                  ng-options="obj.application for obj in formValues.applications"></select>
+        </div>
+        <label class="control-label"
+               for="estimate.environment">Environment</label>
+
+        <div class="controls">
+          <select ng-model="estimateForm.environment"
+                  id="estimate.environment"
+                  ng-options="obj.environment for obj in formValues.environments"></select>
+        </div>
+        <label class="control-label"
+               for="estimate.type">Type</label>
+
+        <div class="controls">
+          <select ng-model="estimateForm.type" id="estimate.type"
+                  ng-options="obj.type for obj in formValues.types"></select>
+        </div>
+        <label class="control-label"
+               for="estimate.description">Description</label>
+
+        <div class="controls">
+          <input ng-model="estimate.description"
+                 id="estimate.description"
+                 class="form-control"
+                 placeholder="Description"></textarea>
+        </div>
+      </div>
+      <div class="col-md-8 main-area">
+        <h3>Resources</h3>
+        <label class="control-label"
+               for="resource.department">Department</label>
+
+        <div class="controls">
+          <select ng-model="resourceForm.department"
+                  id="resource.department"
+                  ng-options="obj.department for obj in formValues.departments"></select>
+        </div>
+        <label class="control-label" for="resource.estimator">Estimator</label>
+
+        <div class="controls">
+          <input ng-model="resource.estimator" id="resource.estimator"
+                 class="form-control"
+                 placeholder="Estimator"></textarea>
+        </div>
+        <label class="control-label"
+               for="resource.estimate">Estimate</label>
+
+        <div class="input-prepend input-append">
+          <input class="span2" ng-model="resource.estimate"
+                 id="resource.estimate" type="number" placeholder="0">
+          <span class="add-on">hrs.</span>
+        </div>
+
+        <label class="control-label"
+               for="resource.description">Description</label>
+
+        <div class="controls">
+          <input ng-model="resource.description" id="resource.description"
+                 class="form-control"
+                 placeholder="Description"></textarea>
+        </div>
+        <label class="control-label"
+               for="resource.notes">Notes</label>
+
+        <div class="controls">
+          <textarea ng-model="resource.notes" id="resource.notes"
+                    class="form-control" cols="30" rows="10"
+                    placeholder="Notes"></textarea>
+        </div>
+      </div>
+      <div class="col-md-8 main-area">
+        <h3>Infrastructure</h3>
+        <label class="control-label"
+               for="infrastructure.department">Department</label>
+
+        <div class="controls">
+          <select ng-model="formValues.department"
+                  id="infrastructure.department"
+                  ng-options="obj.department for obj in formValues.departments"></select>
+        </div>
+        <label class="control-label"
+               for="infrastructure.estimator">Estimator</label>
+
+        <div class="controls">
+          <input ng-model="infrastructure.estimator"
+                 id="infrastructure.estimator"
+                 class="form-control"
+                 placeholder="Estimator"></textarea>
+        </div>
+        <label class="control-label"
+               for="infrastructure.estimate">Estimate</label>
+
+        <div class="input-prepend input-append">
+          <input class="span2" ng-model="infrastructure.estimate"
+                 id="infrastructure.estimate" type="number" placeholder="0">
+          <span class="add-on">hrs.</span>
+        </div>
+
+        <label class="control-label"
+               for="infrastructure.cost">Cost</label>
+
+        <div class="input-prepend input-append">
+          <span class="add-on">$</span>
+          <input class="span2"
+                 ng-model="infrastructure.cost"
+                 id="infrastructure.cost"
+                 type="number" placeholder="0">
+        </div>
+
+        <label class="control-label"
+               for="infrastructure.description">Description</label>
+
+        <div class="controls">
+          <input ng-model="infrastructure.description"
+                 id="infrastructure.description"
+                 class="form-control"
+                 placeholder="Description"></textarea>
+        </div>
+        <label class="control-label"
+               for="infrastructure.notes">Notes</label>
+
+        <div class="controls">
+          <textarea ng-model="infrastructure.notes" id="infrastructure.notes"
+                    class="form-control" cols="30" rows="10"
+                    placeholder="Notes"></textarea>
+        </div>
+      </div>
+      <div class="form-group col-md-8"><br/>
+        <input type="submit" class="btn btn-default">
+      </div>
+    </fieldset>
+  </form>
+  </div>
 </section>
