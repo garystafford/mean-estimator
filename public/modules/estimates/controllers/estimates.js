@@ -1,6 +1,7 @@
 'use strict';
 
-angular.module('estimates').controller('EstimatesController', ['$scope', '$stateParams', '$location', 'Authentication', 'Estimates',
+angular.module('estimates').controller('EstimatesController', ['$scope', '$stateParams',
+  '$location', 'Authentication', 'Estimates',
   function ($scope, $stateParams, $location, Authentication, Estimates) {
     $scope.authentication = Authentication;
     $scope.create = function () {
@@ -19,9 +20,9 @@ angular.module('estimates').controller('EstimatesController', ['$scope', '$state
         $location.path('estimates/' + response._id);
       });
 
-      //resource = {};
-      //estimate = {};
-      //estimate = {};
+      //resourceForm = {};
+      //infrastructureForm = {};
+      //estimateForm = {};
     };
 
     $scope.remove = function (estimate) {
