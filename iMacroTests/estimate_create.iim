@@ -1,0 +1,45 @@
+﻿﻿VERSION BUILD=7020226 RECORDER=CR
+URL GOTO=http://localhost:3001/#!/estimates/create
+TAG POS=1 TYPE=SELECT FORM=NAME:NoFormName ATTR=ID:estimateForm.application CONTENT=%0
+TAG POS=1 TYPE=SELECT FORM=NAME:NoFormName ATTR=ID:estimateForm.environment CONTENT=%2
+TAG POS=1 TYPE=SELECT FORM=NAME:NoFormName ATTR=ID:estimateForm.type CONTENT=%1
+TAG POS=1 TYPE=INPUT:TEXT FORM=NAME:NoFormName ATTR=ID:estimateForm.description CONTENT="estimate description"
+TAG POS=1 TYPE=SELECT FORM=NAME:NoFormName ATTR=ID:resourceForm.department CONTENT=%0
+TAG POS=1 TYPE=INPUT:TEXT FORM=NAME:NoFormName ATTR=ID:resourceForm.estimator CONTENT="resource1 estimator"
+TAG POS=1 TYPE=INPUT:NUMBER FORM=NAME:NoFormName ATTR=ID:resourceForm.estimate CONTENT=15
+TAG POS=1 TYPE=INPUT:TEXT FORM=NAME:NoFormName ATTR=ID:resourceForm.description CONTENT="resource1 description"
+TAG POS=1 TYPE=TEXTAREA FORM=NAME:NoFormName ATTR=ID:resourceForm.notes CONTENT="resource1 notes..."
+TAG POS=1 TYPE=BUTTON FORM=NAME:NoFormName ATTR=TXT:Add<SP>Resource
+TAG POS=1 TYPE=SELECT FORM=NAME:NoFormName ATTR=ID:resourceForm.department CONTENT=%1
+TAG POS=1 TYPE=INPUT:TEXT FORM=NAME:NoFormName ATTR=ID:resourceForm.estimator CONTENT="resource2 estimator"
+TAG POS=1 TYPE=INPUT:NUMBER FORM=NAME:NoFormName ATTR=ID:resourceForm.estimate CONTENT=30
+TAG POS=1 TYPE=INPUT:TEXT FORM=NAME:NoFormName ATTR=ID:resourceForm.description CONTENT="resource3 description"
+TAG POS=1 TYPE=TEXTAREA FORM=NAME:NoFormName ATTR=ID:resourceForm.notes CONTENT="resource3 notes..."
+TAG POS=1 TYPE=BUTTON FORM=NAME:NoFormName ATTR=TXT:Add<SP>Resource
+TAG POS=1 TYPE=SELECT FORM=NAME:NoFormName ATTR=ID:resourceForm.department CONTENT=%2
+TAG POS=1 TYPE=INPUT:TEXT FORM=NAME:NoFormName ATTR=ID:resourceForm.estimator CONTENT="resource3 estimator"
+TAG POS=1 TYPE=INPUT:NUMBER FORM=NAME:NoFormName ATTR=ID:resourceForm.estimate CONTENT=45
+TAG POS=1 TYPE=INPUT:TEXT FORM=NAME:NoFormName ATTR=ID:resourceForm.description CONTENT="resource3 description"
+TAG POS=1 TYPE=TEXTAREA FORM=NAME:NoFormName ATTR=ID:resourceForm.notes CONTENT="resource3 notes..."
+TAG POS=1 TYPE=BUTTON FORM=NAME:NoFormName ATTR=TXT:Add<SP>Resource
+TAG POS=1 TYPE=SELECT FORM=NAME:NoFormName ATTR=ID:infrastructureForm.department CONTENT=%3
+TAG POS=1 TYPE=INPUT:TEXT FORM=NAME:NoFormName ATTR=ID:infrastructureForm.estimator CONTENT="infrastructure1 estimator"
+TAG POS=1 TYPE=INPUT:NUMBER FORM=NAME:NoFormName ATTR=ID:infrastructureForm.estimate CONTENT=10
+TAG POS=1 TYPE=INPUT:NUMBER FORM=NAME:NoFormName ATTR=ID:infrastructureForm.cost CONTENT=1000
+TAG POS=1 TYPE=INPUT:TEXT FORM=NAME:NoFormName ATTR=ID:infrastructureForm.description CONTENT="infrastructure1 description"
+TAG POS=1 TYPE=TEXTAREA FORM=NAME:NoFormName ATTR=ID:infrastructureForm.notes CONTENT="infrastructure1 notes..."
+TAG POS=1 TYPE=BUTTON FORM=NAME:NoFormName ATTR=TXT:Add<SP>Infrastructure
+TAG POS=1 TYPE=SELECT FORM=NAME:NoFormName ATTR=ID:infrastructureForm.department CONTENT=%4
+TAG POS=1 TYPE=INPUT:TEXT FORM=NAME:NoFormName ATTR=ID:infrastructureForm.estimator CONTENT="infrastructure2 estimator"
+TAG POS=1 TYPE=INPUT:NUMBER FORM=NAME:NoFormName ATTR=ID:infrastructureForm.estimate CONTENT=20
+TAG POS=1 TYPE=INPUT:NUMBER FORM=NAME:NoFormName ATTR=ID:infrastructureForm.cost CONTENT=2000
+TAG POS=1 TYPE=INPUT:TEXT FORM=NAME:NoFormName ATTR=ID:infrastructureForm.description CONTENT="infrastructure2 description"
+TAG POS=1 TYPE=TEXTAREA FORM=NAME:NoFormName ATTR=ID:infrastructureForm.notes CONTENT="infrastructure2 notes..."
+TAG POS=1 TYPE=BUTTON FORM=NAME:NoFormName ATTR=TXT:Add<SP>Infrastructure
+TAG POS=1 TYPE=SELECT FORM=NAME:NoFormName ATTR=ID:infrastructureForm.department CONTENT=%0
+TAG POS=1 TYPE=INPUT:TEXT FORM=NAME:NoFormName ATTR=ID:infrastructureForm.estimator CONTENT="infrastructure3 estimator"
+TAG POS=1 TYPE=INPUT:NUMBER FORM=NAME:NoFormName ATTR=ID:infrastructureForm.estimate CONTENT=30
+TAG POS=1 TYPE=INPUT:NUMBER FORM=NAME:NoFormName ATTR=ID:infrastructureForm.cost CONTENT=3000
+TAG POS=1 TYPE=INPUT:TEXT FORM=NAME:NoFormName ATTR=ID:infrastructureForm.description CONTENT="infrastructure3 description"
+TAG POS=1 TYPE=TEXTAREA FORM=NAME:NoFormName ATTR=ID:infrastructureForm.notes CONTENT="infrastructure3 notes..."
+TAG POS=1 TYPE=BUTTON FORM=NAME:NoFormName ATTR=TXT:Add<SP>Infrastructure

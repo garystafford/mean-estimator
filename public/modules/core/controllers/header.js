@@ -6,7 +6,7 @@ angular.module('core').controller('HeaderController', ['$scope', 'Authentication
     $scope.isCollapsed = false;
 
     $scope.menu = [{
-      title: 'Estimates',
+      title: 'View Estimates',
       link: 'estimates',
       uiRoute: '/estimates'
     }, {
