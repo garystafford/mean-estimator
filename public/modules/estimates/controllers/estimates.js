@@ -12,17 +12,13 @@ angular.module('estimates').controller('EstimatesController', ['$scope', '$state
         environment: this.estimateForm.environment,
         description: this.estimateForm.description,
         type: this.estimateForm.type,
-        resources: [this.resourceForm],
-        infrastructures: [this.infrastructureForm]
+        resources: this.resourceArray,
+        infrastructures: this.infrastructureArray
       });
 
       estimate.$save(function (response) {
         $location.path('estimates/' + response._id);
       });
-
-      //resourceForm = {};
-      //infrastructureForm = {};
-      //estimateForm = {};
     };
 
     $scope.remove = function (estimate) {
@@ -65,6 +61,28 @@ angular.module('estimates').controller('EstimatesController', ['$scope', '$state
       }, function (estimate) {
         $scope.estimate = estimate;
       });
+    };
+
+    $scope.resourceArray = [];
+    $scope.infrastructureArray = [];
+
+    $scope.addToArray = function (objectType) {
+      if (objectType === 'resource') { //resource
+        this.resourceArray.push(this.resourceForm);
+        this.resourceForm = {}; //clear form
+      } else { // infrastructure
+        this.infrastructureArray.push(this.infrastructureForm);
+        this.infrastructureForm = {}; // clear form
+      }
+    };
+
+    $scope.removeFromArray = function (objectType, position) {
+      //console.log(objectType + position);
+      if (objectType === 'resource') { //resource
+        this.resourceArray.splice(position, 1);
+      } else { // infrastructure
+        this.infrastructureArray.splice(position, 1);
+      }
     };
 
     $scope.resourceForm = {

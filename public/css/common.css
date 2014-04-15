@@ -16,4 +16,14 @@ a.undecorated-link:hover {
   padding-right:  18px;
   padding-bottom:  18px;
   margin-bottom: 18px;
+  margin-right: 18px;
+}
+
+.estimate-top {
+  border: 1px solid #ccc;
+  padding-left:  18px;
+  padding-right:  18px;
+  padding-bottom:  18px;
+  margin-bottom: 18px;
+  margin-right: 18px;
 }
