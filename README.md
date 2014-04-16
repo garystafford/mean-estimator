@@ -41,4 +41,4 @@
 <p>This project is built using MEAN.JS - Full-Stack JavaScript Using MongoDB, Express, AngularJS, and Node.js From Creators of MEAN.IO - http://meanjs.org</p>
 <br>
 <br>
-![Main Page ](https://github.com/garystafford/environment-estimator.git/blob/master/images/main_page.png?raw=true)
+![Main Page ](https://github.com/garystafford/environment-estimator/blob/master/images/main_page.png?raw=true)
