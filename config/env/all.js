@@ -5,9 +5,9 @@ var path = require('path'),
 
 module.exports = {
 	app: {
-		title: 'MEAN.JS',
-		description: 'Full-Stack JavaScript with MongoDB, Express, AngularJS, and Node.js',
-		keywords: 'mongodb, express, angularjs, node.js, mongoose, passport'
+		title: 'Environment Application Estimator',
+		description: 'Based on MEAN.JS: Full-Stack JavaScript with MongoDB, Express, AngularJS, and Node.js',
+		keywords: 'MEAN.JS, mongodb, express, angularjs, node.js, mongoose, passport'
 	},
 	root: rootPath,
 	port: process.env.PORT || 3000,

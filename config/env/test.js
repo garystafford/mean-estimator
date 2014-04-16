@@ -4,7 +4,7 @@ module.exports = {
 	db: 'mongodb://localhost/mean-test',
 	port: 3001,
 	app: {
-		title: 'MEAN.JS - Test Environment'
+		title: 'Environment Application Estimator - Test Environment'
 	},
 	facebook: {
 		clientID: 'APP_ID',

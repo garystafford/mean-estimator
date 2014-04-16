@@ -1,35 +1,37 @@
 <section ng-controller="EstimatesController">
 <div class="page-header">
-  <h1>New Estimate</h1>
+  <h2>New Estimate</h2>
 </div>
 <form class="form-horizontal" ng-submit="create()">
 <fieldset>
-  <div class="form-group">
-  </div>
   <div class="col-md-7 main-area">
     <h3>Estimate</h3>
     <label class="control-label"
            for="estimateForm.application">Application</label>
 
     <div class="controls">
-      <select ng-model="estimateForm.application"
+      <select class="form-control" ng-model="estimateForm.application"
               id="estimateForm.application"
-              ng-options="application for application in formValues.applications"></select>
+              ng-options="application for application in formValues.applications"
+              required></select>
     </div>
     <label class="control-label"
            for="estimateForm.environment">Environment</label>
 
     <div class="controls">
-      <select ng-model="estimateForm.environment"
+      <select class="form-control" ng-model="estimateForm.environment"
               id="estimateForm.environment"
-              ng-options="environment for environment in formValues.environments"></select>
+              ng-options="environment for environment in formValues.environments"
+              required></select>
     </div>
     <label class="control-label"
            for="estimateForm.type">Estimate Type</label>
 
     <div class="controls">
-      <select ng-model="estimateForm.type" id="estimateForm.type"
-              ng-options="type for type in formValues.types"></select>
+      <select class="form-control" ng-model="estimateForm.type"
+              id="estimateForm.type"
+              ng-options="type for type in formValues.types"
+              required></select>
     </div>
     <label class="control-label"
            for="estimateForm.description">Description</label>
@@ -38,7 +40,7 @@
       <input ng-model="estimateForm.description"
              id="estimateForm.description"
              class="form-control"
-             placeholder="Description"/>
+             placeholder="Description" required/>
     </div>
   </div>
   <div class="col-md-7 main-area">
@@ -48,7 +50,7 @@
            for="resourceForm.department">Department</label>
 
     <div class="controls">
-      <select ng-model="resourceForm.department"
+      <select class="form-control" ng-model="resourceForm.department"
               id="resourceForm.department"
               ng-options="department for department in formValues.departments"></select>
     </div>
@@ -83,7 +85,7 @@
 
     <div class="controls">
       <textarea ng-model="resourceForm.notes" id="resourceForm.notes"
-                class="form-control" cols="30" rows="10"
+                class="form-control" cols="30" rows="5"
                 placeholder="Notes"></textarea>
     </div>
     <br/>
@@ -104,8 +106,7 @@
         <strong>Estimate (hrs):</strong> {{resource.estimate}}<br/>
         <strong>Notes:</strong> {{resource.notes}}<br/>
         <button type="button" class="btn btn-danger btn-xs"
-                ng-click="removeFromArray('resource',
-                    this.$index);$(element).parents('li').remove();">
+                ng-click="removeFromArray('resource', this.$index);">
           Remove
         </button>
         <br/>
@@ -119,7 +120,7 @@
            for="infrastructureForm.department">Department</label>
 
     <div class="controls">
-      <select ng-model="infrastructureForm.department"
+      <select class="form-control" ng-model="infrastructureForm.department"
               id="infrastructureForm.department"
               ng-options="department for department in formValues.departments"></select>
     </div>
@@ -168,7 +169,7 @@
     <div class="controls">
       <textarea ng-model="infrastructureForm.notes"
                 id="infrastructureForm.notes"
-                class="form-control" cols="30" rows="10"
+                class="form-control" cols="30" rows="5"
                 placeholder="Notes"></textarea>
     </div>
     <br/>
@@ -190,8 +191,7 @@
         <strong>Cost ($):</strong> {{infrastructure.estimate}}<br/>
         <strong>Notes:</strong> {{infrastructure.notes}}<br/>
         <button type="button" class="btn btn-danger btn-xs"
-                ng-click="removeFromArray('infrastructure',
-                    this.$index);$(element).parents('li').remove();">
+                ng-click="removeFromArray('infrastructure', this.$index);">
           Remove
         </button>
         <br/>
@@ -199,7 +199,7 @@
       </li>
     </ol>
   </div>
-  <div class="form-group col-md-7"><br/>
+  <div class="col-md-7"><br/>
     <input type="submit" class="btn btn-default">
   </div>
 </fieldset>
