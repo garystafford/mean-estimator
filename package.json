@@ -1,7 +1,7 @@
 {
-  "name": "meanjs",
-  "description": "Full-Stack JavaScript with MongoDB, Express, AngularJS, and Node.js.",
-  "version": "0.2.2",
+  "name": "Environment Application Estimator",
+  "description": "Provides a platform for the collection of estimates for adding, updating, and removing application platforms in development and test environments.",
+  "version": "0.3.0",
   "private": false,
   "author": "https://github.com/meanjs/mean/graphs/contributors",
   "repository": {

@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 var config = require('./config/config'),
-	mongoose = require('mongoose');
+  mongoose = require('mongoose');
 
 /**
  * Main application entry file.
