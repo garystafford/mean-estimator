@@ -2,10 +2,7 @@
 <h2>Environment Application Estimator</h2>
 </div>
 <p>
-  Provides a platform for the collection of estimates for adding, updating,
-  and removing application platforms in development and test environments.
-  Collect and report on time and cost estimates from multiple resource
-  groups.
+  Provides a platform for the collection of estimates for adding, updating, and removing application platforms in development and test environments. Collect and report on time and cost estimates from multiple resource groups.
 </p>
 <br/>
 <dl>
