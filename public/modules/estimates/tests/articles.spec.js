@@ -53,8 +53,27 @@
     it('$scope.find() should create an array with at least one estimate object fetched from XHR', inject(function (Estimates) {
       // Create sample estimate using the Estimates service
       var sampleEstimate = new Estimates({
-        title: 'An Estimate about MEAN',
-        content: 'MEAN rocks!'
+        application: 'Application 1',
+        created: '2014-04-17T04:56:35.086Z',
+        description: 'estimate description',
+        environment: 'Environment C',
+        type: 'Update',
+        user: '534f5ef824e4b8551cce63ed',
+        infrastructures: [{
+          cost: 1000,
+          department: 'Department 4',
+          description: 'infrastructure1 description',
+          estimate: 10,
+          estimator: 'infrastructure1 estimator',
+          notes: 'infrastructure1 notes...'}
+        ],
+        resources: [{
+          department: 'Department 1',
+          description: 'resource1 description',
+          estimate: 15,
+          estimator: 'resource1 estimator',
+          notes: 'resource1 notes...'
+        }]
       });
 
       // Create a sample estimates array that includes the new estimate
@@ -74,8 +93,27 @@
     it('$scope.findOne() should create an array with one estimate object fetched from XHR using a estimateId URL parameter', inject(function (Estimates) {
       // Define a sample estimate object
       var sampleEstimate = new Estimates({
-        title: 'An Estimate about MEAN',
-        content: 'MEAN rocks!'
+        application: 'Application 1',
+        created: '2014-04-17T04:56:35.086Z',
+        description: 'estimate description',
+        environment: 'Environment C',
+        type: 'Update',
+        user: '534f5ef824e4b8551cce63ed',
+        infrastructures: [{
+          cost: 1000,
+          department: 'Department 4',
+          description: 'infrastructure1 description',
+          estimate: 10,
+          estimator: 'infrastructure1 estimator',
+          notes: 'infrastructure1 notes...'}
+        ],
+        resources: [{
+          department: 'Department 1',
+          description: 'resource1 description',
+          estimate: 15,
+          estimator: 'resource1 estimator',
+          notes: 'resource1 notes...'
+        }]
       });
 
       // Set the URL parameter
@@ -95,20 +133,58 @@
     it('$scope.create() with valid form data should send a POST request with the form input values and then locate to new object URL', inject(function (Estimates) {
       // Create a sample estimate object
       var sampleEstimatePostData = new Estimates({
-        title: 'An Estimate about MEAN',
-        content: 'MEAN rocks!'
+        _id: '525cf20451979dea2c000001',
+        application: 'Application 1',
+        description: 'estimate description',
+        environment: 'Environment C',
+        type: 'Update',
+        user: '534f5ef824e4b8551cce63ed',
+        infrastructures: [{
+          cost: 1000,
+          department: 'Department 4',
+          description: 'infrastructure1 description',
+          estimate: 10,
+          estimator: 'infrastructure1 estimator',
+          notes: 'infrastructure1 notes...'}
+        ],
+        resources: [{
+          department: 'Department 1',
+          description: 'resource1 description',
+          estimate: 15,
+          estimator: 'resource1 estimator',
+          notes: 'resource1 notes...'
+        }]
       });
 
       // Create a sample estimate response
       var sampleEstimateResponse = new Estimates({
         _id: '525cf20451979dea2c000001',
-        title: 'An Estimate about MEAN',
-        content: 'MEAN rocks!'
+        application: 'Application 1',
+        description: 'estimate description',
+        environment: 'Environment C',
+        type: 'Update',
+        user: '534f5ef824e4b8551cce63ed',
+        infrastructures: [{
+          cost: 1000,
+          department: 'Department 4',
+          description: 'infrastructure1 description',
+          estimate: 10,
+          estimator: 'infrastructure1 estimator',
+          notes: 'infrastructure1 notes...'}
+        ],
+        resources: [{
+          department: 'Department 1',
+          description: 'resource1 description',
+          estimate: 15,
+          estimator: 'resource1 estimator',
+          notes: 'resource1 notes...'
+        }]
       });
 
       // Fixture mock form input values
-      scope.title = 'An Estimate about MEAN';
-      scope.content = 'MEAN rocks!';
+        scope.application = 'Application 1';
+        scope.description = 'estimate description';
+        scope.environment = 'Environment C';
 
       // Set POST response
       $httpBackend.expectPOST('estimates', sampleEstimatePostData).respond(sampleEstimateResponse);
@@ -118,8 +194,9 @@
       $httpBackend.flush();
 
       // Test form inputs are reset
-      expect(scope.title).toEqual('');
-      expect(scope.content).toEqual('');
+      expect(scope.application).toEqual('');
+      expect(scope.description).toEqual('');
+      expect(scope.environment).toEqual('');
 
       // Test URL redirection after the estimate was created
       expect($location.path()).toBe('/estimates/' + sampleEstimateResponse._id);
@@ -129,8 +206,27 @@
       // Define a sample estimate put data
       var sampleEstimatePutData = new Estimates({
         _id: '525cf20451979dea2c000001',
-        title: 'An Estimate about MEAN',
-        content: 'MEAN Rocks!'
+        application: 'Application 1',
+        created: '2014-04-17T04:56:35.086Z',
+        description: 'estimate description',
+        environment: 'Environment C',
+        type: 'Update',
+        user: '534f5ef824e4b8551cce63ed',
+        infrastructures: [{
+          cost: 1000,
+          department: 'Department 4',
+          description: 'infrastructure1 description',
+          estimate: 10,
+          estimator: 'infrastructure1 estimator',
+          notes: 'infrastructure1 notes...'}
+        ],
+        resources: [{
+          department: 'Department 1',
+          description: 'resource1 description',
+          estimate: 15,
+          estimator: 'resource1 estimator',
+          notes: 'resource1 notes...'
+        }]
       });
 
       // Mock estimate in scope

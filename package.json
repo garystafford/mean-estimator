@@ -1,5 +1,5 @@
 {
-  "name": "Environment Application Estimator",
+  "name": "environment-estimator",
   "description": "Provides a platform for the collection of estimates for adding, updating, and removing application platforms in development and test environments.",
   "version": "0.3.0",
   "private": false,

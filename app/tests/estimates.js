@@ -29,10 +29,27 @@ describe('Estimate Model Unit Tests:', function() {
 
     user.save(function() {
       estimate = new Estimate({
-        application: 'Estimate Application',
-        description: 'Estimate Description',
-        environment: 'Estimate Environment',
-        user: user
+        application: 'Application 1',
+        created: '2014-04-17T04:56:35.086Z',
+        description: 'estimate description',
+        environment: 'Environment C',
+        type: 'Update',
+        user: user,
+        infrastructures: [{
+          cost: 1000,
+          department: 'Department 4',
+          description: 'infrastructure1 description',
+          estimate: 10,
+          estimator: 'infrastructure1 estimator',
+          notes: 'infrastructure1 notes...'}
+        ],
+        resources: [{
+          department: 'Department 1',
+          description: 'resource1 description',
+          estimate: 15,
+          estimator: 'resource1 estimator',
+          notes: 'resource1 notes...'
+        }]
       });
 
       done();
@@ -50,7 +67,7 @@ describe('Estimate Model Unit Tests:', function() {
     it('should be able to show an error when try to save without description', function(done) {
       estimate.description = '';
 
-      return Estimate.save(function(err) {
+      return estimate.save(function(err) {
         should.exist(err);
         done();
       });
