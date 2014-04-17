@@ -134,6 +134,7 @@
       // Create a sample estimate object
       var sampleEstimatePostData = new Estimates({
         _id: '525cf20451979dea2c000001',
+        created: '2014-04-17T04:56:35.086Z',
         application: 'Application 1',
         description: 'estimate description',
         environment: 'Environment C',
@@ -159,6 +160,7 @@
       // Create a sample estimate response
       var sampleEstimateResponse = new Estimates({
         _id: '525cf20451979dea2c000001',
+        created: '2014-04-17T04:56:35.086Z',
         application: 'Application 1',
         description: 'estimate description',
         environment: 'Environment C',
