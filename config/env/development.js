@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-	db: 'mongodb://localhost/mean-dev',
+  db: 'mongodb://localhost/env-estimate-dev',
 	app: {
 		title: 'Environment Application Estimator - Development Environment'
 	},

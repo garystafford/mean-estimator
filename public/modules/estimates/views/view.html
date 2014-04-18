@@ -4,7 +4,7 @@
   </div>
 
   <div class="pull-right"
-       data-ng-show="authentication.user._id == estimate.user._id">
+       data-ng-show="authentication.user._id !== ''">
     <a class="btn btn-primary" href="/#!/estimates/{{estimate._id}}/edit">
       <i class="glyphicon glyphicon-edit"></i>
     </a>

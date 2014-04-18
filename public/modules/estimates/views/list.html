@@ -2,23 +2,22 @@
   <div class="page-header">
     <h2>Estimates</h2>
   </div>
-  <div class="list-group">
+  <div class="list-group" data-ng-show="authentication.user._id !== ''">
     <a data-ng-repeat="estimate in estimates"
-       data-ng-href="#!/estimates/{{estimate._id}}" class="list-group-item">
-      <h4 class="list-group-item-heading">{{estimate.application}}
-        ({{estimate.environment}})</h4>
-
-      <p class="list-group-item-text">{{estimate.description}}</p>
-      <i>
-        <small class="list-group-item-text">{{estimate.created | date:'medium'}}
-          /
-          {{estimate.user.displayName}}
-        </small>
-      </i>
+    data-ng-href="#!/estimates/{{estimate._id}}" class="list-group-item">
+    <h4 class="list-group-item-heading">{{estimate.application}}
+    ({{estimate.environment}}):{{authentication.user._id}}</h4>
+    <p class="list-group-item-text">{{estimate.description}}</p>
+    <i>
+    <small class="list-group-item-text">{{estimate.created | date:'medium'}}
+    /
+    {{estimate.user.displayName}}
+    </small>
+    </i>
     </a>
   </div>
   <div class="alert alert-warning text-center"
-       data-ng-hide="!estimate || estimate.length">
+    data-ng-hide="!estimate || estimate.length">
     No estimates yet, why don't you <a href="/#!/estimates/create">create
     one</a>?
   </div>
