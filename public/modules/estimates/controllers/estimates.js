@@ -3,7 +3,9 @@
 angular.module('estimates').controller('EstimatesController', ['$scope', '$stateParams',
   '$location', 'Authentication', 'Estimates',
   function ($scope, $stateParams, $location, Authentication, Estimates) {
+
     $scope.authentication = Authentication;
+
     $scope.create = function () {
       var estimate = new Estimates({
         user: this.estimateForm.user,
@@ -20,6 +22,8 @@ angular.module('estimates').controller('EstimatesController', ['$scope', '$state
       });
     };
 
+    // copy currently displayed estimate displayed
+    // and append description with 'COPY'.
     $scope.copy = function () {
       var estimate = new Estimates({
         user: $scope.user,
@@ -84,7 +88,7 @@ angular.module('estimates').controller('EstimatesController', ['$scope', '$state
       });
     };
 
-// add a resource or infrastructure item to estimate
+    // add a resource or infrastructure item to estimate
     $scope.addToArray = function (objectType) {
       if (objectType === 'resource') { //resource
         this.resourceArray.push(this.resourceForm);
@@ -95,7 +99,7 @@ angular.module('estimates').controller('EstimatesController', ['$scope', '$state
       }
     };
 
-// remove a resource or infrastructure item to estimate
+    // remove a resource or infrastructure item to estimate
     $scope.removeFromArray = function (objectType, position) {
       if (objectType === 'resource') { //resource
         this.resourceArray.splice(position, 1);
@@ -104,7 +108,7 @@ angular.module('estimates').controller('EstimatesController', ['$scope', '$state
       }
     };
 
-// move a resource or infrastructure item to estimate form
+    // move a resource or infrastructure item to estimate form
     $scope.moveToEdit = function (objectType, position) {
       if (objectType === 'resource') { //resource
         $scope.resourceForm = this.resourceArray[position];
@@ -118,7 +122,7 @@ angular.module('estimates').controller('EstimatesController', ['$scope', '$state
     $scope.infrastructureArray = []; // holds individual infrastructures
 
 
-// three objects hold form values (two way data-binding)
+    // three objects hold form values (two way data-binding)
     $scope.resourceForm = {
       department: '',
       estimator: '',
@@ -144,7 +148,8 @@ angular.module('estimates').controller('EstimatesController', ['$scope', '$state
       type: ''
     };
 
-// groups of items for form select objects
+    // groups of items for form select objects
+    // TODO: load values from a JSON configuration file
     $scope.formValues = {
       types: [ 'Add', 'Update', 'Remove' ],
       environments: [ 'Environment A', 'Environment B', 'Environment C',
