@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function(grunt) {
+module.exports = function (grunt) {
   // Project Configuration
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -8,33 +8,33 @@ module.exports = function(grunt) {
       serverViews: {
         files: ['app/views/**'],
         options: {
-          livereload: true,
+          livereload: true
         }
       },
       serverJS: {
         files: ['gruntfile.js', 'server.js', 'config/**/*.js', 'app/**/*.js'],
         tasks: ['jshint'],
         options: {
-          livereload: true,
+          livereload: true
         }
       },
       clientViews: {
         files: ['public/modules/**/views/*.html'],
         options: {
-          livereload: true,
+          livereload: true
         }
       },
       clientJS: {
         files: ['public/js/**/*.js', 'public/modules/**/*.js'],
         tasks: ['jshint'],
         options: {
-          livereload: true,
+          livereload: true
         }
       },
       clientCSS: {
         files: ['public/**/css/*.css'],
         options: {
-          livereload: true,
+          livereload: true
         }
       }
     },

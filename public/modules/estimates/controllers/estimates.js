@@ -6,7 +6,6 @@ angular.module('estimates').controller('EstimatesController', ['$scope', '$state
     $scope.authentication = Authentication;
     $scope.create = function () {
       var estimate = new Estimates({
-        created: this.estimateForm.created,
         user: this.estimateForm.user,
         application: this.estimateForm.application,
         environment: this.estimateForm.environment,
@@ -14,6 +13,22 @@ angular.module('estimates').controller('EstimatesController', ['$scope', '$state
         type: this.estimateForm.type,
         resources: this.resourceArray,
         infrastructures: this.infrastructureArray
+      });
+
+      estimate.$save(function (response) {
+        $location.path('estimates/' + response._id);
+      });
+    };
+
+    $scope.copy = function () {
+      var estimate = new Estimates({
+        user: $scope.user,
+        application: $scope.estimate.application,
+        environment: $scope.estimate.environment,
+        description: '(** COPY **): ' + $scope.estimate.description,
+        type: this.estimateForm.type,
+        resources: $scope.estimate.resources,
+        infrastructures: $scope.estimate.infrastructures
       });
 
       estimate.$save(function (response) {
@@ -69,7 +84,7 @@ angular.module('estimates').controller('EstimatesController', ['$scope', '$state
       });
     };
 
-    // add a resource or infrastructure item to estimate
+// add a resource or infrastructure item to estimate
     $scope.addToArray = function (objectType) {
       if (objectType === 'resource') { //resource
         this.resourceArray.push(this.resourceForm);
@@ -80,7 +95,7 @@ angular.module('estimates').controller('EstimatesController', ['$scope', '$state
       }
     };
 
-    // remove a resource or infrastructure item to estimate
+// remove a resource or infrastructure item to estimate
     $scope.removeFromArray = function (objectType, position) {
       if (objectType === 'resource') { //resource
         this.resourceArray.splice(position, 1);
@@ -89,7 +104,7 @@ angular.module('estimates').controller('EstimatesController', ['$scope', '$state
       }
     };
 
-    // move a resource or infrastructure item to estimate form
+// move a resource or infrastructure item to estimate form
     $scope.moveToEdit = function (objectType, position) {
       if (objectType === 'resource') { //resource
         $scope.resourceForm = this.resourceArray[position];
@@ -103,7 +118,7 @@ angular.module('estimates').controller('EstimatesController', ['$scope', '$state
     $scope.infrastructureArray = []; // holds individual infrastructures
 
 
-    // three objects hold form values (two way data-binding)
+// three objects hold form values (two way data-binding)
     $scope.resourceForm = {
       department: '',
       estimator: '',
@@ -122,7 +137,6 @@ angular.module('estimates').controller('EstimatesController', ['$scope', '$state
     };
 
     $scope.estimateForm = {
-      created: new Date(),
       user: this.user,
       application: '',
       environment: '',
@@ -130,7 +144,7 @@ angular.module('estimates').controller('EstimatesController', ['$scope', '$state
       type: ''
     };
 
-    // groups of items for form select objects
+// groups of items for form select objects
     $scope.formValues = {
       types: [ 'Add', 'Update', 'Remove' ],
       environments: [ 'Environment A', 'Environment B', 'Environment C',
@@ -140,4 +154,6 @@ angular.module('estimates').controller('EstimatesController', ['$scope', '$state
       applications: [ 'Application 1', 'Application 2', 'Application 3',
         'Application 4', 'Application 5' ]
     };
-  }]);
+  }
+])
+;
