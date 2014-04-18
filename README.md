@@ -1,6 +1,6 @@
 <div class="page-header">
 <p>
-[![Build Status](https://travis-ci.org/garystafford/environment-estimator.svg?branch=master)](https://travis-ci.org/garystafford/environment-estimator)
+<a href='https://travis-ci.org/garystafford/environment-estimator'><img src='https://travis-ci.org/garystafford/environment-estimator.svg?branch=master'></a>
 </p>
 <h2>Environment Application Estimator</h2>
 </div>
