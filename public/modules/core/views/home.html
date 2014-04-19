@@ -2,25 +2,39 @@
   <div class="page-header">
     <h2>Environment Application Estimator</h2>
   </div>
-  <section>
-    <p>
-      Provides a platform for the collection of estimates for adding, updating,
-      and removing application platforms in development and test environments.
-      Collect and report on time and cost estimates from multiple resource
-      groups.
-    </p>
-    <br/>
+  <p>
+    Provides a platform for the collection of estimates for adding, updating,
+    and removing application platforms in development and test environments.
+    Collect and report on time and cost estimates from multiple resources.
+  </p>
+  <br/>
+
+  <div data-ng-show="!(authentication.user._id)" class="text-danger">
+    <dl>
+      <dt>
+      <h2><i class="glyphicon glyphicon-lock"></i></h2>Access Denied</dt>
+      <dd>
+        To access estimates, you must <a href="/#!/signin">sign in</a> or <a
+        href="/#!/signup">sign up</a>.
+        <br>
+        <br>
+      </dd>
+    </dl>
+  </div>
+  <div data-ng-show="(authentication.user._id)">
     <dl>
       <dt>View Estimates</dt>
       <dd>
-        <a href="/#!/estimates">List</a> all estimates. Click on an estimate in
+        <a href="/#!/estimates">List</a> all estimates. Click on an estimate
+        in
         list to view the estimate details.
         <br>
         <br>
       </dd>
       <dt>View Estimate Details</dt>
       <dd>
-        Click on an estimate in <a href="/#!/estimates">list of estimates</a> to
+        Click on an estimate in <a href="/#!/estimates">list of estimates</a>
+        to
         view the estimate details.
         <br>
         <br>
@@ -45,5 +59,5 @@
         <br>
       </dd>
     </dl>
-  </section>
+  </div>
 </section>
