@@ -25,7 +25,7 @@ module.exports = function(config) {
       'public/lib/angular-ui-utils/ui-utils.js',
       'public/lib/angular-ui-router/release/angular-ui-router.js',
       'public/js/config.js',
-      'public/js/application.js',
+      'public/js/application.js'
     ].concat(modulesJSFiles),
 
     // Test results reporter to use
