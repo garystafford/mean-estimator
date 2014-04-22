@@ -14,6 +14,9 @@ module.exports = function(app) {
   app.put('/estimates/:estimateId', users.requiresLogin, estimates.hasAuthorization, estimates.update);
   app.del('/estimates/:estimateId', users.requiresLogin, estimates.hasAuthorization, estimates.delete);
 
+  // Form Data Route
+  app.get('/estimates/formdata', estimates.getFormData);
+
   // Finish by binding the estimate middleware
   app.param('estimateId', estimates.estimateByID);
 };

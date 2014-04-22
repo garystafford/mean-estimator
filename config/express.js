@@ -12,12 +12,12 @@ var express = require('express'),
   path = require('path'),
   utilities = require('./utilities');
 
-module.exports = function (db) {
+module.exports = function(db) {
   // Initialize express app
   var app = express();
 
   // Initialize models
-  utilities.walk('./app/models').forEach(function (modelPath) {
+  utilities.walk('./app/models').forEach(function(modelPath) {
     require(path.resolve(modelPath));
   });
 
@@ -32,14 +32,14 @@ module.exports = function (db) {
   });
 
   // Passing the request url to environment locals
-  app.use(function (req, res, next) {
+  app.use(function(req, res, next) {
     res.locals.url = req.protocol + ':// ' + req.headers.host + req.url;
     next();
   });
 
   // Should be placed before express.static
   app.use(express.compress({
-    filter: function (req, res) {
+    filter: function(req, res) {
       return (/json|text|javascript|css/).test(res.getHeader('Content-Type'));
     },
     level: 9
@@ -56,7 +56,7 @@ module.exports = function (db) {
   app.set('views', config.root + '/app/views');
 
   // Application Configuration for development environment
-  app.configure('development', function () {
+  app.configure('development', function() {
     // Enable logger
     app.use(express.logger('dev'));
 
@@ -65,7 +65,7 @@ module.exports = function (db) {
   });
 
   // Application Configuration for production environment
-  app.configure('production', function () {
+  app.configure('production', function() {
     app.locals({
       cache: 'memory' // To solve SWIG Cache Issues
     });
@@ -105,12 +105,12 @@ module.exports = function (db) {
   app.use(express.static(config.root + '/public'));
 
   // Load Routes
-  utilities.walk('./app/routes').forEach(function (routePath) {
+  utilities.walk('./app/routes').forEach(function(routePath) {
     require(path.resolve(routePath))(app);
   });
 
   // Assume 'not found' in the error msgs is a 404. this is somewhat silly, but valid, you can do whatever you like, set properties, use instanceof etc.
-  app.use(function (err, req, res, next) {
+  app.use(function(err, req, res, next) {
     // If the error object doesn't exists
     if (!err) return next();
 
@@ -124,7 +124,7 @@ module.exports = function (db) {
   });
 
   // Assume 404 since no middleware responded
-  app.use(function (req, res) {
+  app.use(function(req, res) {
     res.status(404).render('404.html', {
       url: req.originalUrl,
       error: 'Not Found'

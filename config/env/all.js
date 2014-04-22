@@ -14,5 +14,6 @@ module.exports = {
   port: process.env.PORT || 3000,
   templateEngine: 'swig',
   sessionSecret: 'MEAN',
-  sessionCollection: 'sessions'
+  sessionCollection: 'sessions',
+  envFormData: process.env.ENV_FORM_DATA || './modules/estimates/data/formData.json'
 };

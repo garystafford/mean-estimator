@@ -5,7 +5,8 @@
  */
 var mongoose = require('mongoose'),
   Estimate = mongoose.model('Estimate'),
-  _ = require('lodash');
+  _ = require('lodash'),
+  fs = require('fs');
 
 /**
  * Create a Estimate
@@ -104,4 +105,35 @@ exports.hasAuthorization = function(req, res, next) {
     return res.send(403, 'User is not authorized');
   }
   next();
+};
+
+/**
+ * Get form data from local store or default to project template
+ */
+function readJSONFile(filename, callback) {
+  fs.readFile(filename, function(err, data) {
+    if (err) {
+      callback(err);
+      return;
+    }
+    try {
+      callback(null, JSON.parse(data));
+    } catch (exception) {
+      callback(exception);
+    }
+  });
+}
+
+var envFormDataLocation = process.env.ENV_FORM_DATA || './data/formData.json';
+
+exports.getFormData = function(req, res) {
+  readJSONFile(envFormDataLocation, function(err, json) {
+    if (err) {
+      res.render('error', {
+        status: 500
+      });
+    } else {
+      res.jsonp(json);
+    }
+  });
 };

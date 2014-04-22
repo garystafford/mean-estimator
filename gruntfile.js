@@ -2,7 +2,7 @@
 
 var path = require('path');
 
-module.exports = function (grunt) {
+module.exports = function(grunt) {
   // load all grunt tasks
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
@@ -21,24 +21,21 @@ module.exports = function (grunt) {
 
   try {
     yeomanConfig.app = require('./bower.json').appPath || yeomanConfig.app;
-  } catch (e) {
-  }
+  } catch (e) {}
 
   // Project Configuration
   grunt.initConfig({
     yeoman: yeomanConfig,
     clean: {
       dist: {
-        files: [
-          {
-            dot: true,
-            src: [
-              '.tmp',
-              '<%= yeoman.dist %>/*',
-              '!<%= yeoman.dist %>/.git*'
-            ]
-          }
-        ]
+        files: [{
+          dot: true,
+          src: [
+            '.tmp',
+            '<%= yeoman.dist %>/*',
+            '!<%= yeoman.dist %>/.git*'
+          ]
+        }]
       },
       server: '.tmp'
     },
@@ -62,20 +59,18 @@ module.exports = function (grunt) {
     },
     ngmin: {
       dist: {
-        files: [
-          {
-            expand: true,
-            cwd: '<%= yeoman.dist %>/js',
-            src: '*.js',
-            dest: '<%= yeoman.dist %>/js'
-          }
-        ]
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.dist %>/js',
+          src: '*.js',
+          dest: '<%= yeoman.dist %>/js'
+        }]
       }
     },
     cssmin: {
       build: {
         files: {
-          '<%= yeoman.dist %>/application.css': [ '<%= yeoman.dist %>/css/*.css' ]
+          '<%= yeoman.dist %>/application.css': ['<%= yeoman.dist %>/css/*.css']
         }
       }
     },
@@ -92,26 +87,22 @@ module.exports = function (grunt) {
            removeEmptyAttributes: true,
            removeOptionalTags: true*/
         },
-        files: [
-          {
-            expand: true,
-            cwd: '<%= yeoman.app %>',
-            src: ['*.html', 'views/*.html'],
-            dest: '<%= yeoman.dist %>'
-          }
-        ]
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.app %>',
+          src: ['*.html', 'views/*.html'],
+          dest: '<%= yeoman.dist %>'
+        }]
       }
     },
     imagemin: {
       dist: {
-        files: [
-          {
-            expand: true,
-            cwd: '<%= yeoman.app %>/img',
-            src: '{,*/}*.{png,jpg,jpeg}',
-            dest: '<%= yeoman.dist %>/img'
-          }
-        ]
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.app %>/img',
+          src: '{,*/}*.{png,jpg,jpeg}',
+          dest: '<%= yeoman.dist %>/img'
+        }]
       }
     },
     uglify: {
@@ -120,46 +111,45 @@ module.exports = function (grunt) {
           mangle: false
         },
         files: {
-          '<%= yeoman.dist %>/application.js': [ '<%= yeoman.dist %>/js/*.js' ]
+          '<%= yeoman.dist %>/application.js': [
+            '<%= yeoman.dist %>/js/*.js'
+          ]
         }
       }
     },
-//    uglify: {
-//      dist: {
-//        files: {
-//          '<%= yeoman.dist %>/js/scripts.js': [
-//            '<%= yeoman.dist %>/js/scripts.js'
-//          ]
-//        }
-//      }
-//    },
+    //    uglify: {
+    //      dist: {
+    //        files: {
+    //          '<%= yeoman.dist %>/js/scripts.js': [
+    //            '<%= yeoman.dist %>/js/scripts.js'
+    //          ]
+    //        }
+    //      }
+    //    },
     // Put files not handled in other tasks here
     copy: {
       dist: {
-        files: [
-          {
-            expand: true,
-            dot: true,
-            cwd: '<%= yeoman.app %>',
-            dest: '<%= yeoman.dist %>',
-            src: [
-              '**'
-//              '*.{ico,png,txt}',
-//              '.htaccess',
-//              'bower_components/**/*',
-//              'img/{,*/}*.{gif,webp,svg}',
-//              'styles/fonts/*'
-            ]
-          },
-          {
-            expand: true,
-            cwd: '.tmp/img',
-            dest: '<%= yeoman.dist %>/img',
-            src: [
-              'generated/*'
-            ]
-          }
-        ]
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: '<%= yeoman.app %>',
+          dest: '<%= yeoman.dist %>',
+          src: [
+            '**'
+            //              '*.{ico,png,txt}',
+            //              '.htaccess',
+            //              'bower_components/**/*',
+            //              'img/{,*/}*.{gif,webp,svg}',
+            //              'styles/fonts/*'
+          ]
+        }, {
+          expand: true,
+          cwd: '.tmp/img',
+          dest: '<%= yeoman.dist %>/img',
+          src: [
+            'generated/*'
+          ]
+        }]
       }
     },
     rev: {
@@ -228,26 +218,22 @@ module.exports = function (grunt) {
     },
     coffee: {
       dist: {
-        files: [
-          {
-            expand: true,
-            cwd: '<%= yeoman.app %>/js',
-            src: '{,*/}*.coffee',
-            dest: '.tmp/js',
-            ext: '.js'
-          }
-        ]
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.app %>/js',
+          src: '{,*/}*.coffee',
+          dest: '.tmp/js',
+          ext: '.js'
+        }]
       },
       test: {
-        files: [
-          {
-            expand: true,
-            cwd: 'test/spec',
-            src: '{,*/}*.coffee',
-            dest: '.tmp/spec',
-            ext: '.js'
-          }
-        ]
+        files: [{
+          expand: true,
+          cwd: 'test/spec',
+          src: '{,*/}*.coffee',
+          dest: '.tmp/spec',
+          ext: '.js'
+        }]
       }
     },
     concurrent: {
@@ -287,13 +273,13 @@ module.exports = function (grunt) {
   });
 
   //Load NPM tasks 
-//  grunt.loadNpmTasks('grunt-contrib-watch');
-//  grunt.loadNpmTasks('grunt-contrib-jshint');
-//  grunt.loadNpmTasks('grunt-mocha-test');
-//  grunt.loadNpmTasks('grunt-karma');
-//  grunt.loadNpmTasks('grunt-nodemon');
-//  grunt.loadNpmTasks('grunt-concurrent');
-//  grunt.loadNpmTasks('grunt-env');
+  //  grunt.loadNpmTasks('grunt-contrib-watch');
+  //  grunt.loadNpmTasks('grunt-contrib-jshint');
+  //  grunt.loadNpmTasks('grunt-mocha-test');
+  //  grunt.loadNpmTasks('grunt-karma');
+  //  grunt.loadNpmTasks('grunt-nodemon');
+  //  grunt.loadNpmTasks('grunt-concurrent');
+  //  grunt.loadNpmTasks('grunt-env');
 
   //Making grunt default to force in order not to break the project.
   grunt.option('force', true);
