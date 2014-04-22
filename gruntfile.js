@@ -15,7 +15,6 @@ module.exports = function (grunt) {
 
   // configurable paths
   var yeomanConfig = {
-    appBackend: 'app',
     app: 'public',
     dist: 'dist'
   };
@@ -44,7 +43,7 @@ module.exports = function (grunt) {
       server: '.tmp'
     },
     useminPrepare: {
-      html: '<%= yeoman.appBackend %>/views/index.html',
+      html: '<%= yeoman.app %>/views/*.html',
       options: {
         dest: '<%= yeoman.dist %>'
       }
@@ -66,9 +65,9 @@ module.exports = function (grunt) {
         files: [
           {
             expand: true,
-            cwd: '<%= yeoman.dist %>/scripts',
+            cwd: '<%= yeoman.dist %>/js',
             src: '*.js',
-            dest: '<%= yeoman.dist %>/scripts'
+            dest: '<%= yeoman.dist %>/js'
           }
         ]
       }
@@ -128,8 +127,8 @@ module.exports = function (grunt) {
 //    uglify: {
 //      dist: {
 //        files: {
-//          '<%= yeoman.dist %>/scripts/scripts.js': [
-//            '<%= yeoman.dist %>/scripts/scripts.js'
+//          '<%= yeoman.dist %>/js/scripts.js': [
+//            '<%= yeoman.dist %>/js/scripts.js'
 //          ]
 //        }
 //      }
@@ -232,9 +231,9 @@ module.exports = function (grunt) {
         files: [
           {
             expand: true,
-            cwd: '<%= yeoman.app %>/scripts',
+            cwd: '<%= yeoman.app %>/js',
             src: '{,*/}*.coffee',
-            dest: '.tmp/scripts',
+            dest: '.tmp/js',
             ext: '.js'
           }
         ]

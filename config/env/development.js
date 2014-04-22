@@ -2,7 +2,10 @@
 
 module.exports = {
   db: 'mongodb://localhost/env-estimate-dev',
-	app: {
+  jsConfigPath: 'public/js/config.js',
+  jsApplicationPath: 'public/js/application.js',
+  cssPath: 'css/common.css',
+  app: {
 		title: 'Environment Application Estimator - Development Environment'
 	},
 	facebook: {
