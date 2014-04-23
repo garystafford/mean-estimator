@@ -108,8 +108,8 @@
       // Set GET response
       $httpBackend.expectGET('estimates').respond(sampleEstimates);
 
-      // Set GET response
-      $httpBackend.expectGET('formdata').respond(sampleFormData);
+      // When formdata GET happens then respond
+      $httpBackend.whenGET('formdata').respond(sampleFormData);
 
       // Run controller functionality
       scope.find();
@@ -154,6 +154,9 @@
 
       // Set GET response
       $httpBackend.expectGET(/estimates\/([0-9a-fA-F]{24})$/).respond(sampleEstimate);
+
+      // When formdata GET happens then respond
+      $httpBackend.whenGET('formdata').respond(sampleFormData);
 
       // Run controller functionality
       scope.findOne();
@@ -265,6 +268,9 @@
 
       // Set expected DELETE response
       $httpBackend.expectDELETE(/estimates\/([0-9a-fA-F]{24})$/).respond(204);
+
+      // When formdata GET happens then respond
+      $httpBackend.whenGET('formdata').respond(sampleFormData);
 
       // Run controller functionality
       scope.remove(sampleEstimate);
