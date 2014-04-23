@@ -20,64 +20,65 @@
       by
       {{estimate.user.displayName}}</em>
   </small>
-  <p class="lead">
-  <table class="table table-striped table-condensed table-bordered">
-    <tr>
-      <td><strong>Application</strong></td>
-      <td>{{estimate.application}}</td>
-    </tr>
-    <tr>
-      <td><strong>Environment</strong></td>
-      <td>{{estimate.environment}}</td>
-    </tr>
-    <tr>
-      <td><strong>Estimate Type</strong></td>
-      <td>{{estimate.type}}</td>
-    </tr>
-    <tr>
-      <td><strong>Description</strong></td>
-      <td>{{estimate.description}}</td>
-    </tr>
-    <tr>
-      <td><strong>Resources</strong></td>
-      <td>
-        <ul>
-          <li ng-repeat="resource in estimate.resources">
-            <strong class="sub-key">Department:</strong> {{resource.department}}<br/>
-            <strong class="sub-key">Estimator:</strong>
-            {{resource.estimator}}<br/>
-            <strong class="sub-key">Description:</strong>
-            {{resource.description}}<br/>
-            <strong class="sub-key">Estimate (hrs):</strong>
-            {{resource.estimate}}<br/>
-            <strong class="sub-key">Notes:</strong> {{resource.notes}}<br/>
-            <br/>
-          </li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td><strong>Infrastructure</strong></td>
-      <td>
-        <ul>
-          <li ng-repeat="infrastructure in estimate.infrastructures">
-            <strong class="sub-key">Department:</strong>
-            {{infrastructure.department}}<br/>
-            <strong class="sub-key">Estimator:</strong>
-            {{infrastructure.estimator}}<br/>
-            <strong class="sub-key">Description:</strong>
-            {{infrastructure.description}}<br/>
-            <strong class="sub-key">Estimate (hrs):</strong>
-            {{infrastructure.estimate}}<br/>
-            <strong class="sub-key">Cost ($):</strong>
-            {{infrastructure.estimate}}<br/>
-            <strong class="sub-key">Notes:</strong>
-            {{infrastructure.notes}}<br/>
-            <br/>
-          </li>
-        </ul>
-      </td>
-    </tr>
-  </table>
-  </p>
+  <div class="lead">
+    <table class="table table-striped table-condensed table-bordered">
+      <tr>
+        <td><strong>Application</strong></td>
+        <td>{{estimate.application}}</td>
+      </tr>
+      <tr>
+        <td><strong>Environment</strong></td>
+        <td>{{estimate.environment}}</td>
+      </tr>
+      <tr>
+        <td><strong>Estimate Type</strong></td>
+        <td>{{estimate.type}}</td>
+      </tr>
+      <tr>
+        <td><strong>Description</strong></td>
+        <td>{{estimate.description}}</td>
+      </tr>
+      <tr>
+        <td><strong>Resources</strong></td>
+        <td>
+          <ul>
+            <li ng-repeat="resource in estimate.resources">
+              <strong class="sub-key">Department:</strong>
+              {{resource.department}}<br/>
+              <strong class="sub-key">Estimator:</strong>
+              {{resource.estimator}}<br/>
+              <strong class="sub-key">Description:</strong>
+              {{resource.description}}<br/>
+              <strong class="sub-key">Estimate (hrs):</strong>
+              {{resource.estimate}}<br/>
+              <strong class="sub-key">Notes:</strong> {{resource.notes}}<br/>
+              <br/>
+            </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Infrastructure</strong></td>
+        <td>
+          <ul>
+            <li ng-repeat="infrastructure in estimate.infrastructures">
+              <strong class="sub-key">Department:</strong>
+              {{infrastructure.department}}<br/>
+              <strong class="sub-key">Estimator:</strong>
+              {{infrastructure.estimator}}<br/>
+              <strong class="sub-key">Description:</strong>
+              {{infrastructure.description}}<br/>
+              <strong class="sub-key">Estimate (hrs):</strong>
+              {{infrastructure.estimate}}<br/>
+              <strong class="sub-key">Cost ($):</strong>
+              {{infrastructure.estimate}}<br/>
+              <strong class="sub-key">Notes:</strong>
+              {{infrastructure.notes}}<br/>
+              <br/>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+  </div>
 </section>

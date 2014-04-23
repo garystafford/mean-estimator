@@ -29,6 +29,7 @@
             required>
       <option style="display:none" value="">Select an Environment..
       </option>
+    </select>
   </div>
   <label class="control-label"
          for="estimateForm.type">Estimate Type</label>
@@ -39,6 +40,7 @@
             ng-options="type for type in formValues.types"
             required>
       <option style="display:none" value="">Select a Type...</option>
+    </select>
   </div>
   <label class="control-label"
          for="estimateForm.description">Description</label>
@@ -58,7 +60,10 @@
   <div class="controls">
     <select class="form-control" ng-model="resourceForm.department"
             id="resourceForm.department"
-            ng-options="department for department in formValues.departments"></select>
+            ng-options="department for department in formValues.departments">
+      <option style="display:none" value="">Select an Department...
+      </option>
+    </select>
   </div>
   <label class="control-label"
          for="resourceForm.estimator">Estimator</label>
@@ -132,7 +137,10 @@
     <select class="form-control"
             ng-model="infrastructureForm.department"
             id="infrastructureForm.department"
-            ng-options="department for department in formValues.departments"></select>
+            ng-options="department for department in formValues.departments">
+      <option style="display:none" value="">Select an Department...
+      </option>
+    </select>
   </div>
   <label class="control-label"
          for="infrastructureForm.estimator">Estimator</label>

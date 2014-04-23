@@ -58,9 +58,8 @@
   <div class="controls">
     <select class="form-control" ng-model="resourceForm.department"
             id="resourceForm.department"
-            ng-options="department for department in formValues.departments"
-            required>
-      <option style="display:none" value="">Select an Application...
+            ng-options="department for department in formValues.departments">
+      <option style="display:none" value="">Select an Department...
       </option>
     </select>
   </div>
@@ -135,7 +134,10 @@
   <div class="controls">
     <select class="form-control" ng-model="infrastructureForm.department"
             id="infrastructureForm.department"
-            ng-options="department for department in formValues.departments"></select>
+            ng-options="department for department in formValues.departments">
+    <option style="display:none" value="">Select an Department...
+    </option>
+    </select>
   </div>
   <label class="control-label"
          for="infrastructureForm.estimator">Estimator</label>
