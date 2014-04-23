@@ -10,6 +10,29 @@
       $stateParams,
       $location;
 
+    var sampleFormData = {
+      'environments': [
+        'Environment A',
+        'Environment B',
+        'Environment C'
+      ],
+      'types': [
+        'Type A',
+        'Type B',
+        'Type C'
+      ],
+      'departments': [
+        'Department A',
+        'Department B',
+        'Department C'
+      ],
+      'applications': [
+        'Application 1',
+        'Application 2',
+        'Application 3'
+      ]
+    };
+
     // The $resource service augments the response object with methods for updating and deleting the resource.
     // If we were to use the standard toEqual matcher, our tests would fail because the test values would not match
     // the responses exactly. To solve the problem, we define a new toEqualData Jasmine matcher.
@@ -84,6 +107,9 @@
 
       // Set GET response
       $httpBackend.expectGET('estimates').respond(sampleEstimates);
+
+      // Set GET response
+      $httpBackend.expectGET('formdata').respond(sampleFormData);
 
       // Run controller functionality
       scope.find();
