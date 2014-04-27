@@ -12,15 +12,11 @@
     "Remove"
   ],
   "departments": [
-    "DBA - MSSQL",
-    "DBA - NO SQL",
-    "DBA - Oracle",
-    "Development",
-    "Infrastructure",
-    "Networking",
-    "Security",
-    "Test Engineering",
-    "Web Operations"
+    "Departments A",
+    "Departments B",
+    "Departments C",
+    "Departments D",
+    "Departments E"
   ],
   "applications": [
     "Application 1",
