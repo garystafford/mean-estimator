@@ -126,17 +126,16 @@ function readJSONFile(filename, callback) {
 }
 
 /**
- * If env var does not exist read default file data
+ * Read JSON form data from one of two possible sources
  */
 exports.getFormData = function (req, res) {
+  // If env var does not exist read default file data
   if (!process.env.ENV_FORM_DATA) {
     res.jsonp(formDataJSON);
     return
   }
 
-  /**
-   * Else read the env var file path
-   */
+  // Else read the env var file path
   readJSONFile(process.env.ENV_FORM_DATA, function (err, json) {
     if (err) {
       console.log(err);
@@ -145,4 +144,43 @@ exports.getFormData = function (req, res) {
       res.jsonp(json);
     }
   });
+}
+
+/**
+ * Summary of Resource Estimates
+ */
+exports.getResourcesEstimates = function (req, res) {
+  var pipeline = [];
+  pipeline.push(
+    { $unwind: '$resources' },
+    {
+      $project: {
+        application: '$application',
+        environment: '$environment',
+        estimate: '$resources.estimate'
+      }
+    },
+    {
+      $group: {
+        _id: {
+          application: '$application',
+          environment: '$environment'
+        },
+        sum: { $sum: '$estimate' },
+        count: { $sum: 1 }
+      }
+    },
+    { $sort: { _id: 1 } }
+  );
+
+  Estimate.aggregate(pipeline).exec(function (err, estimates) {
+    if (err) {
+      res.render('error', {
+        status: 500
+      });
+    } else {
+      res.jsonp(estimates);
+    }
+  });
 };
+

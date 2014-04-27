@@ -19,4 +19,9 @@ module.exports = function(app) {
 
   // Finish by binding the estimate middleware
   app.param('estimateId', estimates.estimateByID);
+
+  // Reporting Routes
+  app.get('/reporting/resources/estimates', estimates.getResourcesEstimates);
+  //app.get('/reporting/infrastructures/estimates', estimates.getInfrastructuresEstimates);
+  //app.get('/reporting/infrastructures/costs', estimates.getInfrastructuresCosts);
 };
