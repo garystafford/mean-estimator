@@ -6,7 +6,8 @@
 var mongoose = require('mongoose'),
   Estimate = mongoose.model('Estimate'),
   _ = require('lodash'),
-  fs = require('fs');
+  fs = require('fs'),
+  formDataJSON = require('../../app/data/formData.json');
 
 /**
  * Create a Estimate
@@ -108,7 +109,7 @@ exports.hasAuthorization = function (req, res, next) {
 };
 
 /**
- * Get form data from local store or default to project template
+ * Read from JSON file
  */
 function readJSONFile(filename, callback) {
   fs.readFile(filename, function (err, data) {
@@ -124,15 +125,22 @@ function readJSONFile(filename, callback) {
   });
 }
 
-// looks for environment variable, if missing, uses default file within project
-var envFormDataLocation = process.env.ENV_FORM_DATA || './data/formData.json';
-
+/**
+ * If env var does not exist read default file data
+ */
 exports.getFormData = function (req, res) {
-  readJSONFile(envFormDataLocation, function (err, json) {
+  if (!process.env.ENV_FORM_DATA) {
+    res.jsonp(formDataJSON);
+    return
+  }
+
+  /**
+   * Else read the env var file path
+   */
+  readJSONFile(process.env.ENV_FORM_DATA, function (err, json) {
     if (err) {
-      res.render('500', {
-        status: 500
-      });
+      console.log(err);
+      return res.send(500, 'Form data could not be loaded');
     } else {
       res.jsonp(json);
     }
