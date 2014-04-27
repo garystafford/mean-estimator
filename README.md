@@ -41,12 +41,12 @@
 <p>This project is built using MEAN.JS - Full-Stack JavaScript Using MongoDB, Express, AngularJS, and Node.js From Creators of MEAN.IO - http://meanjs.org</p>
 <br>
 <br>
-<img src="https://github.com/garystafford/environment-estimator/blob/master/images/main_page.png?raw=true" alt="Main Page - Desktop" border="1">
+<img src="https://github.com/garystafford/environment-estimator/blob/master/images/main_page.png?raw=true" alt="Main Page - Desktop">
 <br>
-<img src="https://github.com/garystafford/environment-estimator/blob/master/images/signup_mobile.png?raw=true" alt="Signup Page - Mobile" border="1">
+<img src="https://github.com/garystafford/environment-estimator/blob/master/images/signup_mobile.png?raw=true" alt="Signup Page - Mobile">
 <br>
-<img src="https://github.com/garystafford/environment-estimator/blob/master/images/main_page_mobile.png?raw=true" alt="Main Page - Mobile" border="1">
+<img src="https://github.com/garystafford/environment-estimator/blob/master/images/main_page_mobile.png?raw=true" alt="Main Page - Mobile">
 <br>
-<img src="https://github.com/garystafford/environment-estimator/blob/master/images/estimate_detail_mobile.png?raw=true" alt="Estimate Detail Page - Mobile" border="1">
+<img src="https://github.com/garystafford/environment-estimator/blob/master/images/estimate_detail_mobile.png?raw=true" alt="Estimate Detail Page - Mobile">
 <br>
-<img src="https://github.com/garystafford/environment-estimator/blob/master/images/edit_estimate_mobile.png?raw=true" alt="Estimate Edit Page - Mobile" style="padding:1px;border:thin solid black;">
+<img src="https://github.com/garystafford/environment-estimator/blob/master/images/edit_estimate_mobile.png?raw=true" alt="Estimate Edit Page - Mobile">
