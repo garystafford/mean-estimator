@@ -148,28 +148,7 @@ angular.module('estimates').controller('EstimatesController', ['$scope', '$state
       type: ''
     };
 
-    // groups of items for form select objects
-    // $scope.formValues = {
-    //   types: ['Add', 'Update', 'Remove'],
-    //   environments: ['Environment A', 'Environment B', 'Environment C',
-    //     'Environment D', 'Environment E'
-    //   ],
-    //   departments: ['Department 1', 'Department 2', 'Department 3',
-    //     'Department 4', 'Department 5'
-    //   ],
-    //   applications: ['Application 1', 'Application 2', 'Application 3',
-    //     'Application 4', 'Application 5'
-    //   ]
-    // };
-
-    // AngularJS Factory returns the contents of JSON file to the controller.
-
+    // call FormData service for values
     $scope.formValues = FormData.query();
-//    formData.getFormData()
-//      .then(function(response) {
-//        $scope.formValues = response.data;
-//      }, function(error) {
-//        console.error(error);
-//      });
   }
 ]);

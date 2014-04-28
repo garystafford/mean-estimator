@@ -147,9 +147,9 @@ exports.getFormData = function (req, res) {
 }
 
 /**
- * Summary of Resource Estimates
+ * Summary of resource estimates (hours)
  */
-exports.getResourcesEstimates = function (req, res) {
+exports.getResourceEstimates = function (req, res) {
   var pipeline = [];
   pipeline.push(
     { $unwind: '$resources' },
@@ -182,5 +182,59 @@ exports.getResourcesEstimates = function (req, res) {
       res.jsonp(estimates);
     }
   });
-};
+}
+
+/**
+ * Summary of infrastructure estimates (hours) and costs ($)
+ */
+exports.getInfrastructureEstimates = function (req, res) {
+  var pipeline = [];
+  pipeline.push(
+    { $unwind: "$infrastructures" },
+    {
+      $project: {
+        application: "$application",
+        environment: "$environment",
+        estimate: "$infrastructures.estimate",
+        cost: "$infrastructures.cost"
+      }
+    },
+    {
+      $group: {
+        _id: {
+          application: "$application",
+          environment: "$environment"
+        },
+        sumEstimate: { $sum: "$estimate" },
+        sumCost: { $sum: "$cost" },
+        count: { $sum: 1 }
+      }
+    },
+    { $sort: { _id: 1 } }
+  );
+
+  Estimate.aggregate(pipeline).exec(function (err, estimates) {
+    if (err) {
+      res.render('error', {
+        status: 500
+      });
+    } else {
+      res.jsonp(estimates);
+    }
+  });
+
+  var getReportData = function (pipeline, promise) {
+    var getReportData = function (pipeline, promise) {
+      Estimate.aggregate(pipeline).exec(function (err, estimates) {
+        if (err) {
+          res.render('error', {
+            status: 500
+          });
+        } else {
+          res.jsonp(estimates);
+        }
+      });
+    }
+  };
+}
 

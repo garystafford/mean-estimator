@@ -6,7 +6,7 @@
 var users = require('../../app/controllers/users'),
   estimates = require('../../app/controllers/estimates');
 
-module.exports = function(app) {
+module.exports = function (app) {
   // Estimate Routes
   app.get('/estimates', estimates.list);
   app.post('/estimates', users.requiresLogin, estimates.create);
@@ -17,11 +17,10 @@ module.exports = function(app) {
   // Form Data Route
   app.get('/formdata', estimates.getFormData);
 
+  // Reporting Routes
+  app.get('/reporting/resources', estimates.getResourceEstimates);
+  app.get('/reporting/infrastructure', estimates.getInfrastructureEstimates);
+
   // Finish by binding the estimate middleware
   app.param('estimateId', estimates.estimateByID);
-
-  // Reporting Routes
-  app.get('/reporting/resources/estimates', estimates.getResourcesEstimates);
-  //app.get('/reporting/infrastructures/estimates', estimates.getInfrastructuresEstimates);
-  //app.get('/reporting/infrastructures/costs', estimates.getInfrastructuresCosts);
 };

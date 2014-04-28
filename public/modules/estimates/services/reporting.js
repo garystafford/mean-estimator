@@ -2,22 +2,15 @@
 
 //Reporting service used for communicating with the estimates REST endpoints
 angular.module('reporting').factory('Reporting', ['$resource',
-  this.getResourcesEstimates = function ($resource) {
-    return $resource('reporting/resources/estimates', {}, {
+  this.getResourceEstimates = function ($resource) {
+    return $resource('reporting/resources', {}, {
       query: {
         method: 'GET'
       }
     });
   },
-  this.getInfrastructuresEstimates = function ($resource) {
-    return $resource('reporting/infrastructures/estimates', {}, {
-      query: {
-        method: 'GET'
-      }
-    });
-  },
-  this.getInfrastructuresCosts = function ($resource) {
-    return $resource('reporting/infrastructures/costs', {}, {
+  this.getInfrastructureEstimates = function ($resource) {
+    return $resource('reporting/infrastructure', {}, {
       query: {
         method: 'GET'
       }
