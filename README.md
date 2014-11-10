@@ -2,6 +2,9 @@
 <p>
 <a href='https://travis-ci.org/garystafford/environment-estimator'><img src='https://travis-ci.org/garystafford/environment-estimator.svg?branch=master'></a>
 </p>
+<p>
+  <a href='https://codeship.com/projects/46419'><img src='https://codeship.com/projects/ffb358c0-4ab8-0132-efcb-7aa9472b8ea5/status'></a>
+</p>
 <h2>Environment Application Estimator</h2>
 </div>
 <p>
