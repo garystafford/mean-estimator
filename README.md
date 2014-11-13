@@ -5,6 +5,12 @@
 <p>
   <a href='https://codeship.com/projects/46419'><img src='https://codeship.com/projects/ffb358c0-4ab8-0132-efcb-7aa9472b8ea5/status'></a>
 </p>
+<p>
+  <a href='https://david-dm.org/garystafford/environment-estimator'><img src='https://david-dm.org/garystafford/environment-estimator.png'></a>
+</p>
+<p>
+  <a href='https://david-dm.org/garystafford/environment-estimator#info=devDependencies'><img src='https://david-dm.org/garystafford/environment-estimator/dev-status.svg?style=flatpng'></a>
+</p>
 <h2>Environment Application Estimator</h2>
 </div>
 <p>
