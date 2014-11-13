@@ -1,14 +1,14 @@
 'use strict';
 
-var path = require('path'),
-  rootPath = path.normalize(__dirname + '/../..');
+var path     = require('path'),
+    rootPath = path.normalize(__dirname + '/../..');
 
 module.exports = {
   app: {
     title: 'Environment Application Estimator',
     keywords: 'MEAN.JS, mongodb, express, angularjs, node.js, mongoose, passport',
     description: 'Provides a platform for the collection of estimates for adding, ' +
-      'updating, and removing application platforms in development and test environments.'
+    'updating, and removing application platforms in development and test environments.'
   },
   root: rootPath,
   port: process.env.PORT || 3000,

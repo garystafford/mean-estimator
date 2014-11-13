@@ -12,7 +12,7 @@ module.exports = function (app) {
   app.post('/estimates', users.requiresLogin, estimates.create);
   app.get('/estimates/:estimateId', estimates.read);
   app.put('/estimates/:estimateId', users.requiresLogin, estimates.hasAuthorization, estimates.update);
-  app.del('/estimates/:estimateId', users.requiresLogin, estimates.hasAuthorization, estimates.delete);
+  app.delete('/estimates/:estimateId', users.requiresLogin, estimates.hasAuthorization, estimates.delete);
 
   // Form Data Route
   app.get('/formdata', estimates.getFormData);

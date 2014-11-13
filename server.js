@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 var config = require('./config/config'),
-  mongoose = require('mongoose');
+mongoose   = require('mongoose');
 
 /**
  * Main application entry file.
@@ -23,7 +23,7 @@ require('./config/passport')();
 app.listen(config.port);
 
 // Expose app
-exports = module.exports = app;
+var exports = module.exports = app;
 
 // Logging initialization
 console.log('Express app started on port ' + config.port);

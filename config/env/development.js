@@ -28,5 +28,5 @@ module.exports = {
   // below not implimented yet...
   jsConfigPath: 'public/js/config.js',
   jsApplicationPath: 'public/js/application.js',
-  cssPath: 'css/common.css',
+  cssPath: 'css/common.css'
 };

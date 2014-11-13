@@ -103,7 +103,7 @@ exports.estimateByID = function (req, res, next, id) {
  */
 exports.hasAuthorization = function (req, res, next) {
   if (req.estimate.user.id !== req.user.id) {
-    return res.send(403, 'User is not authorized');
+    return res.status(403).send('User is not authorized');
   }
   next();
 };
@@ -132,19 +132,19 @@ exports.getFormData = function (req, res) {
   // If env var does not exist read default file data
   if (!process.env.ENV_FORM_DATA) {
     res.jsonp(formDataJSON);
-    return
+    return;
   }
 
   // Else read the env var file path
   readJSONFile(process.env.ENV_FORM_DATA, function (err, json) {
     if (err) {
       console.log(err);
-      return res.send(500, 'Form data could not be loaded');
+      return res.status(500).send('Form data could not be loaded');
     } else {
       res.jsonp(json);
     }
   });
-}
+};
 
 /**
  * Summary of resource estimates (hours)
@@ -182,7 +182,7 @@ exports.getResourceEstimates = function (req, res) {
       res.jsonp(estimates);
     }
   });
-}
+};
 
 /**
  * Summary of infrastructure estimates (hours) and costs ($)
@@ -190,23 +190,23 @@ exports.getResourceEstimates = function (req, res) {
 exports.getInfrastructureEstimates = function (req, res) {
   var pipeline = [];
   pipeline.push(
-    { $unwind: "$infrastructures" },
+    { $unwind: '$infrastructures' },
     {
       $project: {
-        application: "$application",
-        environment: "$environment",
-        estimate: "$infrastructures.estimate",
-        cost: "$infrastructures.cost"
+        application: '$application',
+        environment: '$environment',
+        estimate: '$infrastructures.estimate',
+        cost: '$infrastructures.cost'
       }
     },
     {
       $group: {
         _id: {
-          application: "$application",
-          environment: "$environment"
+          application: '$application',
+          environment: '$environment'
         },
-        sumEstimate: { $sum: "$estimate" },
-        sumCost: { $sum: "$cost" },
+        sumEstimate: { $sum: '$estimate' },
+        sumCost: { $sum: '$cost' },
         count: { $sum: 1 }
       }
     },
@@ -234,7 +234,7 @@ exports.getInfrastructureEstimates = function (req, res) {
           res.jsonp(estimates);
         }
       });
-    }
+    };
   };
-}
+};
 
