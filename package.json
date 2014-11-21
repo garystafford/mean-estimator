@@ -1,7 +1,7 @@
 {
   "name": "environment-estimator",
   "description": "Provides a platform for the collection of estimates for adding, updating, and removing application platforms in development and test environments.",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": false,
   "author": "https://github.com/garystafford",
   "repository": {
@@ -10,10 +10,10 @@
   },
   "engines": {
     "node": "0.10.x",
-    "npm": "1.4.x"
+    "npm": "2.1.x"
   },
   "scripts": {
-    "start": "grunt",
+    "start": "node server",
     "test": "grunt test"
   },
   "dependencies": {

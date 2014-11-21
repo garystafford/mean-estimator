@@ -1,7 +1,9 @@
 'use strict';
 
+var DB_HOST = process.env.DB_1_PORT_27017_TCP_ADDR || 'localhost';
+
 module.exports = {
-  db: 'mongodb://localhost/env-estimate-dev',
+  db: 'mongodb://' + DB_HOST + '/env-estimate-dev',
   app: {
     title: 'Environment Application Estimator - Development Environment'
   },

@@ -11,7 +11,7 @@ module.exports = {
     'updating, and removing application platforms in development and test environments.'
   },
   root: rootPath,
-  port: process.env.PORT || 3000,
+  port: process.env.NODE_PORT || 3000,
   templateEngine: 'swig',
   sessionSecret: 'MEAN',
   sessionCollection: 'sessions',

@@ -1,0 +1,16 @@
+web:
+  build: .
+  links:
+   - db
+  ports:
+   - "3111:3111"
+   - "35729:35729"
+  volumes:
+   - ./app:/home/environment-estimator/app
+  environment:
+   NODE_ENV: development
+
+db:
+  image: mongo
+  ports: 
+   - "27017:27017"
