@@ -64,28 +64,26 @@
   </dd>
 </dl>
 <strong>Code details</strong>
-<p> Optional environment variables (defaults below):</p>
-<code>
-  echo 'export NODE_PORT=3111' >> ~/.bashrc<br/>
-  echo 'export NODE_ENV=development' >> ~/.bashrc<br/>
-  echo 'export ENV_FORM_DATA=../../app/data/formData.json' >> ~/.bashrc<br/>
-  .  ~/.bashrc<br/>
-</code>
-
-<p> To run locally:</p>
-<code>
-  npm install<br/>
-  bower install<br/>
-  grunt<br/>
-  node server # alternate method<br/>
-</code>
-<p> To run with fig and Docker:</p>
-<code>
-  docker pull dockerfile/nodejs<br/>
-  docker pull mongo:latest<br/>
-  fig build<br/>
-  fig up<br/>
-</code>
+<p>
+  Optional environment variables (defaults below):<br/>
+  <code>echo 'export NODE_PORT=3111' >> ~/.bashrc</code><br/>
+  <code>echo 'export NODE_ENV=development' >> ~/.bashrc</code><br/>
+  <code>echo 'export ENV_FORM_DATA=../../app/data/formData.json' >> ~/.bashrc</code><br/>
+  <code>. ~/.bashrc</code>
+</p>
+<p> To run locally:<br/>
+  <code>npm install</code><br/>
+  <code>bower install</code><br/>
+  <code>grunt</code><br/>
+  <code>node server # alternate method</code>
+</p>
+<p>
+  To run with fig and Docker:<br />
+  <code>docker pull dockerfile/nodejs</code><br/>
+  <code>docker pull mongo:latest</code><br/>
+  <code>fig build</code><br/>
+  <code>fig up</code>
+</p>
 <br>
 <img src="https://github.com/garystafford/environment-estimator/blob/master/images/main_page.png?raw=true" alt="Main Page - Desktop">
 <br>
