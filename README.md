@@ -30,10 +30,13 @@
       Contains (3) modules: core, estimates, and modules
     </li>
     <li>
-      Default data for Applications, Environments, Estimate Types, and Resources are all read from json configuration file
+      Data for Applications, Environments, Estimate Types, and Resources are all read from json configuration file
     </li>
     <li>
       Can be built locally (npm, bower, grunt) or now with fig (fig.sh) and docker (docker.com)
+    </li>
+    <li>
+      Run in browser at http://localhost:3111
     </li>
     </ul>
 </p>

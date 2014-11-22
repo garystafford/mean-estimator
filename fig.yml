@@ -9,8 +9,8 @@ web:
    - ./app:/home/environment-estimator/app
   environment:
    NODE_ENV: development
-
+   NODE_PORT: 3111
 db:
   image: mongo
-  ports: 
-   - "27017:27017"
+  ports:
+   - "27018:27018"
