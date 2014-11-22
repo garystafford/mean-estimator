@@ -47,19 +47,19 @@ module.exports = function (grunt) {
             }
         },
 
-        usemin       : {
+        usemin    : {
             html   : ['<%= yeoman.dist %>/{,*/}*.html'],
             css    : ['<%= yeoman.dist %>/css/{,*/}*.css'],
             options: {
                 dirs: ['<%= yeoman.dist %>']
             }
         },
-        cdnify       : {
+        cdnify    : {
             dist: {
                 html: ['<%= yeoman.dist %>/*.html']
             }
         },
-        ngmin        : {
+        ngmin     : {
             dist: {
                 files: [{
                     expand: true,
@@ -69,14 +69,14 @@ module.exports = function (grunt) {
                 }]
             }
         },
-        cssmin       : {
+        cssmin    : {
             build: {
                 files: {
                     '<%= yeoman.dist %>/application.css': ['<%= yeoman.dist %>/css/*.css']
                 }
             }
         },
-        htmlmin      : {
+        htmlmin   : {
             dist: {
                 options: {
                     /*removeCommentsFromCDATA: true,
@@ -97,7 +97,7 @@ module.exports = function (grunt) {
                 }]
             }
         },
-        imagemin     : {
+        imagemin  : {
             dist: {
                 files: [{
                     expand: true,
@@ -107,7 +107,7 @@ module.exports = function (grunt) {
                 }]
             }
         },
-        uglify       : {
+        uglify    : {
             build: {
                 options: {
                     mangle: false
@@ -129,7 +129,7 @@ module.exports = function (grunt) {
         //      }
         //    },
         // Put files not handled in other tasks here
-        copy         : {
+        copy      : {
             dist: {
                 files: [{
                     expand: true,
@@ -154,7 +154,7 @@ module.exports = function (grunt) {
                 }]
             }
         },
-        rev          : {
+        rev       : {
             dist: {
                 files: {
                     src: [
@@ -167,8 +167,8 @@ module.exports = function (grunt) {
             }
         },
         // start original project tasks
-        pkg          : grunt.file.readJSON('package.json'),
-        watch        : {
+        pkg       : grunt.file.readJSON('package.json'),
+        watch     : {
             serverViews: {
                 files  : ['app/views/**'],
                 options: {
@@ -202,7 +202,7 @@ module.exports = function (grunt) {
                 }
             }
         },
-        jshint       : {
+        jshint    : {
             all: {
                 src    : ['gruntfile.js', 'server.js', 'config/**/*.js', 'app/**/*.js', 'public/js/**/*.js', 'public/modules/**/*.js'],
                 options: {
@@ -210,7 +210,7 @@ module.exports = function (grunt) {
                 }
             }
         },
-        nodemon      : {
+        nodemon   : {
             dev: {
                 script     : 'server.js',
                 options    : {
@@ -224,7 +224,7 @@ module.exports = function (grunt) {
                 legacyWatch: true
             }
         },
-        coffee       : {
+        coffee    : {
             dist: {
                 files: [{
                     expand: true,
@@ -244,7 +244,7 @@ module.exports = function (grunt) {
                 }]
             }
         },
-        concurrent   : {
+        concurrent: {
             server : [
                 'coffee:dist'
             ],
@@ -261,19 +261,19 @@ module.exports = function (grunt) {
                 logConcurrentOutput: true
             }
         },
-        env          : {
+        env       : {
             test: {
                 NODE_ENV: 'test'
             }
         },
-        mochaTest    : {
+        mochaTest : {
             src    : ['app/tests/**/*.js'],
             options: {
                 reporter: 'spec',
                 require : 'server.js'
             }
         },
-        karma        : {
+        karma     : {
             unit: {
                 configFile: 'karma.conf.js'
             }

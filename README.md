@@ -14,32 +14,48 @@
 <h2>Environment Application Estimator</h2>
 </div>
 <p>
-  Provides a platform for the collection of estimates for adding, updating, and removing application platforms in development and test environments. Collect and report on time and cost estimates from multiple resource groups.
+  This project is built using MEAN.JS - Full-Stack JavaScript Using MongoDB, Express, AngularJS, and Node.js
+  From Creators of MEAN.IO (meanjs.org)
 </p>
-<br/>
+<p>
+  Sample MEAN application for estimating the cost and resources required to add application platforms and
+  infrastructure in development and test software environments. Collect and report on time and cost estimates
+  from multiple resource groups.
+  <ul>
+    <li>
+      Project source code and architecture originally based on the MEAN.JS project on GitHub
+      (github.com/meanjs)
+    </li>
+    <li>
+      Contains (3) modules: core, estimates, and modules
+    </li>
+    <li>
+      Default data for Applications, Environments, Estimate Types, and Resources are all read from json configuration file
+    </li>
+    <li>
+      Can be built locally (npm, bower, grunt) or now with fig (fig.sh) and docker (docker.com)
+    </li>
+    </ul>
+</p>
 <dl>
   <dt><strong>View Estimates</strong></dt>
   <dd>
     List all estimates. Click on an estimate in list to view the estimate details.
-    <br>
     <br>
   </dd>
   <dt><strong>View Estimate Details</strong></dt>
   <dd>
     Click on an estimate in list of estimates to view the estimate details.
     <br>
-    <br>
   </dd>
   <dt><strong>New Estimate</strong></dt>
   <dd>
     Add a new estimate.
     <br>
-    <br>
   </dd>
   <dt><strong>Update an Estimate</strong></dt>
   <dd>
     Update an existing estimate. Access from the list of estimates.
-    <br>
     <br>
   </dd>
   <dt><strong>View Reports</strong> <i>Coming Soon</i></dt>
@@ -47,8 +63,29 @@
     View estimate summary reports.
   </dd>
 </dl>
-<p>This project is built using MEAN.JS - Full-Stack JavaScript Using MongoDB, Express, AngularJS, and Node.js From Creators of MEAN.IO - http://meanjs.org</p>
-<br>
+<strong>Code details</strong>
+<p> Optional environment variables (defaults below):</p>
+<code>
+  echo 'export NODE_PORT=3111' >> ~/.bashrc<br/>
+  echo 'export NODE_ENV=development' >> ~/.bashrc<br/>
+  echo 'export ENV_FORM_DATA=../../app/data/formData.json' >> ~/.bashrc<br/>
+  .  ~/.bashrc<br/>
+</code>
+
+<p> To run locally:</p>
+<code>
+  npm install<br/>
+  bower install<br/>
+  grunt<br/>
+  node server # alternate method<br/>
+</code>
+<p> To run with fig and Docker:</p>
+<code>
+  docker pull dockerfile/nodejs<br/>
+  docker pull mongo:latest<br/>
+  fig build<br/>
+  fig up<br/>
+</code>
 <br>
 <img src="https://github.com/garystafford/environment-estimator/blob/master/images/main_page.png?raw=true" alt="Main Page - Desktop">
 <br>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+<head>
     <title>{{title}}</title>
     <!-- General META -->
     <meta charset="utf-8">
@@ -38,46 +38,46 @@
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-  </head>
-  <body class="ng-cloak">
-    <header data-ng-include="'/modules/core/views/header.html'"
-    class="navbar navbar-fixed-top navbar-inverse"></header>
-    <section class="content">
-      <section class="container">
+</head>
+<body class="ng-cloak">
+<header data-ng-include="'/modules/core/views/header.html'"
+        class="navbar navbar-fixed-top navbar-inverse"></header>
+<section class="content">
+    <section class="container">
         {% block content %}{% endblock %}
-      </section>
     </section>
+</section>
 
-    <!--Embedding The User Object-->
-    <script type="text/javascript">
-      var user = {{ user | json | safe }};
-    </script>
+<!--Embedding The User Object-->
+<script type="text/javascript">
+    var user = {{ user | json | safe }};
+</script>
 
-    <!--AngularJS-->
-    <script type="text/javascript" src="/lib/angular/angular.js"></script>
-    <script type="text/javascript"
-    src="/lib/angular-resource/angular-resource.js"></script>
-    <script type="text/javascript"
-    src="/lib/angular-cookies/angular-cookies.js"></script>
-    <script type="text/javascript"
-    src="/lib/angular-animate/angular-animate.js"></script>
-    <!--Angular UI-->
-    <script type="text/javascript"
-    src="/lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-    <script type="text/javascript" src="/lib/angular-ui-utils/ui-utils.js"></script>
-    <script type="text/javascript"
-    src="/lib/angular-ui-router/release/angular-ui-router.js"></script>
-    <!--AngularJS Application Init-->
-    <script type="text/javascript" src="/js/config.js"></script>
-    <script type="text/javascript" src="/js/application.js"></script>
-    <!--Application Modules-->
-    {% for modulesJSFile in modulesJSFiles %}
-    <script type="text/javascript" src="{{modulesJSFile}}"></script>
-    {% endfor %}
-    {% if process.env.NODE_ENV === 'development' %}
-    <!--Livereload script rendered -->
-    <script type="text/javascript"
-    src="http://localhost:35729/livereload.js"></script>
-    {% endif %}
-  </body>
+<!--AngularJS-->
+<script type="text/javascript" src="/lib/angular/angular.js"></script>
+<script type="text/javascript"
+        src="/lib/angular-resource/angular-resource.js"></script>
+<script type="text/javascript"
+        src="/lib/angular-cookies/angular-cookies.js"></script>
+<script type="text/javascript"
+        src="/lib/angular-animate/angular-animate.js"></script>
+<!--Angular UI-->
+<script type="text/javascript"
+        src="/lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script type="text/javascript" src="/lib/angular-ui-utils/ui-utils.js"></script>
+<script type="text/javascript"
+        src="/lib/angular-ui-router/release/angular-ui-router.js"></script>
+<!--AngularJS Application Init-->
+<script type="text/javascript" src="/js/config.js"></script>
+<script type="text/javascript" src="/js/application.js"></script>
+<!--Application Modules-->
+{% for modulesJSFile in modulesJSFiles %}
+<script type="text/javascript" src="{{modulesJSFile}}"></script>
+{% endfor %}
+{% if process.env.NODE_ENV === 'development' %}
+<!--Livereload script rendered -->
+<script type="text/javascript"
+        src="http://localhost:35729/livereload.js"></script>
+{% endif %}
+</body>
 </html>

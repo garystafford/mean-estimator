@@ -25,11 +25,11 @@
 
 // Users service used for communicating with the estimate REST endpoint
 angular.module('estimates').factory('FormData', ['$resource',
-  function ($resource) {
-    return $resource('formdata', {}, {
-      query: {
-        method: 'GET'
-      }
-    });
-  }
+    function ($resource) {
+        return $resource('formdata', {}, {
+            query: {
+                method: 'GET'
+            }
+        });
+    }
 ]);
