@@ -64,29 +64,24 @@
   </dd>
 </dl>
 <strong>Code details</strong>
-<p>
-  Optional environment variables (defaults if not set, below):<br/>
-  <pre><code>
-  echo 'export NODE_PORT=3111' >> ~/.bashrc
-  echo 'export NODE_ENV=development' >> ~/.bashrc
-  echo 'export ENV_FORM_DATA=../../app/data/formData.json' >> ~/.bashrc
-  . ~/.bashrc</code></pre>
+<p>Optional environment variables (defaults if not set, below):<br/>
+  <pre><code>echo 'export NODE_PORT=3111' >> ~/.bashrc
+    echo 'export NODE_ENV=development' >> ~/.bashrc
+    echo 'export ENV_FORM_DATA=../../app/data/formData.json' >> ~/.bashrc
+    . ~/.bashrc</code></pre>
 </p>
-<p> To run locally:<br/>
-  <pre><code>
-  npm install
-  bower install
-  grunt
-  node server # alternate method</code></pre>
+<p>Run locally:<br/>
+  <pre><code>npm install
+    bower install
+    grunt
+    node server # alternate method</code></pre>
 </p>
-<p>
-  To run with fig and Docker:<br />
-  <pre><code>
-  docker pull dockerfile/nodejs
-  docker pull mongo
-  fig build
-  fig up
-  fig ps # check your containers</code></pre>
+<p>Build and run with fig and Docker:<br />
+  <pre><code>docker pull dockerfile/nodejs
+    docker pull mongo
+    fig build
+    fig up
+    fig ps # check your containers</code></pre>
 </p>
 <br>
 <img src="https://github.com/garystafford/meanestimator/blob/master/images/main_page.png?raw=true" alt="Main Page - Desktop">
