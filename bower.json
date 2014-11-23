@@ -3,14 +3,14 @@
   "version": "0.4.0",
   "description": "Provides a platform for the collection of estimates for adding, updating, and removing application platforms in development and test environments.",
   "dependencies": {
-    "bootstrap": "~3",
-    "angular": "~1.2",
-    "angular-cookies": "~1.2",
-    "angular-resource": "~1.2",
-    "angular-animate": "~1.2",
-    "angular-mocks": "~1.2",
-    "angular-bootstrap": "~0.10.0",
-    "angular-ui-utils": "~0.1.1",
-    "angular-ui-router": "~0.2.10"
+    "bootstrap": "^3.3.1",
+    "angular": "^1.3.3",
+    "angular-cookies": "^1.3.3",
+    "angular-resource": "^1.3.3",
+    "angular-animate": "^1.3.3",
+    "angular-mocks": "^1.3.3",
+    "angular-bootstrap": "^0.10.0",
+    "angular-ui-utils": "^0.1.1",
+    "angular-ui-router": "^0.2.13"
   }
 }

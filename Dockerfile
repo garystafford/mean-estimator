@@ -1,5 +1,5 @@
 #######################################################################
-# Build and run 'environment-estimator' project
+# Build and run 'meanestimator' project
 # within (2) Docker containers: web and db, using fig
 # Code for Docker/fig based on:
 # http://blog.giantswarm.io/getting-started-with-docker-and-meanjs
@@ -9,22 +9,22 @@ FROM dockerfile/nodejs
 
 MAINTAINER Matthias Luebken, matthias@catalyst-zero.com
 
-WORKDIR /home/environment-estimator
+WORKDIR /home/meanestimator
 
-# Install environment-estimator Prerequisites
+# Install meanestimator Prerequisites
 RUN npm install -g grunt-cli bower
 
-# Install environment-estimator packages
-ADD package.json /home/environment-estimator/package.json
+# Install meanestimator packages
+ADD package.json /home/meanestimator/package.json
 RUN npm install
 
 # Manually trigger bower. Why doesn't this work via npm install?
-ADD .bowerrc /home/environment-estimator/.bowerrc
-ADD bower.json /home/environment-estimator/bower.json
+ADD .bowerrc /home/meanestimator/.bowerrc
+ADD bower.json /home/meanestimator/bower.json
 RUN bower install --config.interactive=false --allow-root
 
 # Make everything available for start
-ADD . /home/environment-estimator
+ADD . /home/meanestimator
 
 # currently only works for development
 ENV NODE_ENV development
