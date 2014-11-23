@@ -11,6 +11,6 @@ web:
    NODE_ENV: development
    NODE_PORT: 3111
 db:
-  image: mongo
+  image: mongo:latest
   ports:
-   - "27018:27018"
+   - "27195:27195"
