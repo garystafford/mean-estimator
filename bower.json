@@ -1,6 +1,6 @@
 {
-  "name": "environment-estimator",
-  "version": "0.3.0",
+  "name": "meanestimator",
+  "version": "0.4.0",
   "description": "Provides a platform for the collection of estimates for adding, updating, and removing application platforms in development and test environments.",
   "dependencies": {
     "bootstrap": "~3",

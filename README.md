@@ -1,15 +1,15 @@
 <div class="page-header">
 <p>
-<a href='https://travis-ci.org/garystafford/environment-estimator'><img src='https://travis-ci.org/garystafford/environment-estimator.svg?branch=master'></a>
+<a href='https://travis-ci.org/garystafford/meanestimator'><img src='https://travis-ci.org/garystafford/meanestimator.svg?branch=master'></a>
 </p>
 <p>
   <a href='https://codeship.com/projects/46419'><img src='https://codeship.com/projects/ffb358c0-4ab8-0132-efcb-7aa9472b8ea5/status'></a>
 </p>
 <p>
-  <a href='https://david-dm.org/garystafford/environment-estimator'><img src='https://david-dm.org/garystafford/environment-estimator.png'></a>
+  <a href='https://david-dm.org/garystafford/meanestimator'><img src='https://david-dm.org/garystafford/meanestimator.png'></a>
 </p>
 <p>
-  <a href='https://david-dm.org/garystafford/environment-estimator#info=devDependencies'><img src='https://david-dm.org/garystafford/environment-estimator/dev-status.svg?style=flatpng'></a>
+  <a href='https://david-dm.org/garystafford/meanestimator#info=devDependencies'><img src='https://david-dm.org/garystafford/meanestimator/dev-status.png'></a>
 </p>
 <h2>Environment Application Estimator</h2>
 </div>
@@ -88,12 +88,12 @@
   <code>fig up</code>
 </p>
 <br>
-<img src="https://github.com/garystafford/environment-estimator/blob/master/images/main_page.png?raw=true" alt="Main Page - Desktop">
+<img src="https://github.com/garystafford/meanestimator/blob/master/images/main_page.png?raw=true" alt="Main Page - Desktop">
 <br>
-<img src="https://github.com/garystafford/environment-estimator/blob/master/images/signup_mobile.png?raw=true" alt="Signup Page - Mobile">
+<img src="https://github.com/garystafford/meanestimator/blob/master/images/signup_mobile.png?raw=true" alt="Signup Page - Mobile">
 <br>
-<img src="https://github.com/garystafford/environment-estimator/blob/master/images/main_page_mobile.png?raw=true" alt="Main Page - Mobile">
+<img src="https://github.com/garystafford/meanestimator/blob/master/images/main_page_mobile.png?raw=true" alt="Main Page - Mobile">
 <br>
-<img src="https://github.com/garystafford/environment-estimator/blob/master/images/estimate_detail_mobile.png?raw=true" alt="Estimate Detail Page - Mobile">
+<img src="https://github.com/garystafford/meanestimator/blob/master/images/estimate_detail_mobile.png?raw=true" alt="Estimate Detail Page - Mobile">
 <br>
-<img src="https://github.com/garystafford/environment-estimator/blob/master/images/edit_estimate_mobile.png?raw=true" alt="Estimate Edit Page - Mobile">
+<img src="https://github.com/garystafford/meanestimator/blob/master/images/edit_estimate_mobile.png?raw=true" alt="Estimate Edit Page - Mobile">
