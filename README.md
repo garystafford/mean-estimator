@@ -1,17 +1,14 @@
 <div class="page-header">
 <p>
 <a href='https://travis-ci.org/garystafford/meanestimator'><img src='https://travis-ci.org/garystafford/meanestimator.svg?branch=master'></a>
+&nbsp;&nbsp;
+<a href='https://david-dm.org/garystafford/meanestimator'><img src='https://david-dm.org/garystafford/meanestimator.png'></a>
+&nbsp;&nbsp;
+<a href='https://david-dm.org/garystafford/meanestimator#info=devDependencies'><img src='https://david-dm.org/garystafford/meanestimator/dev-status.png'></a>
+&nbsp;&nbsp;
+<a href='https://codeship.com/projects/46419'><img src='https://codeship.com/projects/ffb358c0-4ab8-0132-efcb-7aa9472b8ea5/status'></a>
 </p>
-<p>
-  <a href='https://codeship.com/projects/46419'><img src='https://codeship.com/projects/ffb358c0-4ab8-0132-efcb-7aa9472b8ea5/status'></a>
-</p>
-<p>
-  <a href='https://david-dm.org/garystafford/meanestimator'><img src='https://david-dm.org/garystafford/meanestimator.png'></a>
-</p>
-<p>
-  <a href='https://david-dm.org/garystafford/meanestimator#info=devDependencies'><img src='https://david-dm.org/garystafford/meanestimator/dev-status.png'></a>
-</p>
-<h2>Environment Application Estimator</h2>
+<h2>MEAN Estimator</h2>
 </div>
 <p>
   This project is built using MEAN.JS - Full-Stack JavaScript Using MongoDB, Express, AngularJS, and Node.js
@@ -68,24 +65,25 @@
 </dl>
 <strong>Code details</strong>
 <p>
-  Optional environment variables (defaults below):<br/>
-  <code>echo 'export NODE_PORT=3111' >> ~/.bashrc</code><br/>
-  <code>echo 'export NODE_ENV=development' >> ~/.bashrc</code><br/>
-  <code>echo 'export ENV_FORM_DATA=../../app/data/formData.json' >> ~/.bashrc</code><br/>
-  <code>. ~/.bashrc</code>
+  Optional environment variables (defaults if not set, below):<br/>
+  <pre><code>echo 'export NODE_PORT=3111' >> ~/.bashrc
+  echo 'export NODE_ENV=development' >> ~/.bashrc
+  echo 'export ENV_FORM_DATA=../../app/data/formData.json' >> ~/.bashrc
+  . ~/.bashrc</code></pre>
 </p>
 <p> To run locally:<br/>
-  <code>npm install</code><br/>
-  <code>bower install</code><br/>
-  <code>grunt</code><br/>
-  <code>node server # alternate method</code>
+  <pre><code>npm install
+  bower install
+  grunt
+  node server # alternate method</code></pre>
 </p>
 <p>
   To run with fig and Docker:<br />
-  <code>docker pull dockerfile/nodejs</code><br/>
-  <code>docker pull mongo:latest</code><br/>
-  <code>fig build</code><br/>
-  <code>fig up</code>
+  <pre><code>docker pull dockerfile/nodejs
+  docker pull mongo
+  fig build
+  fig up
+  fig ps # check your containers</code></pre>
 </p>
 <br>
 <img src="https://github.com/garystafford/meanestimator/blob/master/images/main_page.png?raw=true" alt="Main Page - Desktop">
