@@ -1,11 +1,9 @@
-CI:
 [![TravisCI](https://travis-ci.org/garystafford/meanestimator.svg?branch=master)](https://travis-ci.org/garystafford/meanestimator)&nbsp;&nbsp;
-[![Codeship](https://codeship.com/projects/ffb358c0-4ab8-0132-efcb-7aa9472b8ea5/status)](https://codeship.com/projects/46419)  
-Dependencies:
 [![David Dependencies](https://david-dm.org/garystafford/meanestimator.png)](https://david-dm.org/garystafford/meanestimator)&nbsp;&nbsp;
-[![David Dev Dependencies](https://david-dm.org/garystafford/meanestimator/dev-status.png)](https://david-dm.org/garystafford/meanestimator#info=devDependencies)
-Chat:
+[![David Dev Dependencies](https://david-dm.org/garystafford/meanestimator/dev-status.png)](https://david-dm.org/garystafford/meanestimator#info=devDependencies)&nbsp;&nbsp;
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/garystafford/meanestimator?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)&nbsp;&nbsp;
+
+[![Codeship](https://codeship.com/projects/ffb358c0-4ab8-0132-efcb-7aa9472b8ea5/status)](https://codeship.com/projects/46419)
 
 ## MEAN Estimator
 
