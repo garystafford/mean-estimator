@@ -9,8 +9,8 @@
 
 This project is built using MEAN.JS - Full-Stack JavaScript Using MongoDB, Express, AngularJS, and Node.js. 
 From Creators of MEAN.IO (<http://www.meanjs.org>). Sample MEAN application for estimating the cost and resources
-required to add components in development and test software environments. For example, adding a web server to a test environment.
-Collect and report on time and cost estimates from multiple resource groups.
+required to add, update, and remove system components in development and test software environments.
+For example, adding a new web server to a test environment, or updating a load-balancer in production.
 
 * Project source code and architecture originally based on the MEAN.JS project on GitHub (<http://www.github.com/meanjs>)
 * Docker and fig configuration originally based on post on GiantSwarm Blog (<http://blog.giantswarm.io/getting-started-with-docker-and-meanjs>)
