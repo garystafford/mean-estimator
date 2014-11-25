@@ -1,29 +1,30 @@
 {
   "environments": [
-    "Environment A",
-    "Environment B",
-    "Environment C",
-    "Environment D",
-    "Environment E"
+    "Development",
+    "Integration",
+    "Test",
+    "Staging",
+    "Production"
   ],
   "types": [
     "Add",
-    "Update",
+    "Modify",
     "Remove"
   ],
   "departments": [
-    "Departments A",
-    "Departments B",
-    "Departments C",
-    "Departments D",
-    "Departments E"
+    "Development",
+    "DBAs",
+    "Network Security",
+    "Operations",
+    "Release Engineering"
   ],
   "applications": [
-    "Application 1",
-    "Application 2",
-    "Application 3",
-    "Application 4",
-    "Application 5",
-    "Application 6"
+    "Apache Web Server",
+    "WebLogic Server",
+    "Tomcat Server",
+    "Oracle Database Server",
+    "Microdoft SQL Server",
+    "Load Balancer",
+    "XML Gateway"
   ]
 }

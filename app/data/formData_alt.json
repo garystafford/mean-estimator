@@ -1,0 +1,29 @@
+{
+  "environments": [
+    "Environment A",
+    "Environment B",
+    "Environment C",
+    "Environment D",
+    "Environment E"
+  ],
+  "types": [
+    "Add",
+    "Update",
+    "Remove"
+  ],
+  "departments": [
+    "Departments A",
+    "Departments B",
+    "Departments C",
+    "Departments D",
+    "Departments E"
+  ],
+  "applications": [
+    "",
+    "Application 2",
+    "Application 3",
+    "Application 4",
+    "Application 5",
+    "Application 6"
+  ]
+}
