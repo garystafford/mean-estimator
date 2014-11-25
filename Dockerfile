@@ -29,8 +29,12 @@ ADD . /home/meanestimator
 # currently only works for development
 ENV NODE_ENV development
 
+#Just checking...
+RUN which node; node --version; which npm; npm --version
+
 # Port 3111 for server
 # Port 35729 for livereload
 EXPOSE 3111 35729
+
 CMD ["grunt"]
 

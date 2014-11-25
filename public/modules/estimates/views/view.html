@@ -1,17 +1,18 @@
 <section data-ng-controller="EstimatesController" data-ng-init="findOne()">
     <div class="page-header">
-        <h2>{{estimate.application}} ({{estimate.environment}})</h2>
+        <h3>{{estimate.type}} {{estimate.application}}</h3>
+        <h4>({{estimate.environment}} Environment)</h4>
     </div>
     <div class="pull-right"
          data-ng-show="(authentication.user._id)">
-        <a class="btn btn-primary" href="/#!/estimates/{{estimate._id}}/edit"
+        <a class="btn btn-primary btn-sm" href="/#!/estimates/{{estimate._id}}/edit"
            tooltip="Edit">
-            <i class="glyphicon glyphicon-edit"></i>
+            <i class=" glyphicon glyphicon-edit"></i>
         </a>
-        <a class="btn btn-success" data-ng-click="copy();" tooltip="Copy">
+        <a class="btn btn-success btn-sm" data-ng-click="copy();" tooltip="Copy">
             <i class="glyphicon glyphicon-plus-sign"></i>
         </a>
-        <a class="btn btn-danger" data-ng-click="remove();" tooltip="Remove">
+        <a class="btn btn-danger btn-sm" data-ng-click="remove();" tooltip="Remove">
             <i class="glyphicon glyphicon-trash"></i>
         </a>
     </div>

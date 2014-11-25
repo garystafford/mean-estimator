@@ -2,6 +2,16 @@
 
 var path = require('path');
 
+// Unified Watch Object
+var watchFiles = {
+    serverViews: ['app/views/**/*.*'],
+    serverJS   : ['gruntfile.js', 'server.js', 'config/**/*.js', 'app/**/*.js'],
+    clientViews: ['public/modules/**/views/**/*.html'],
+    clientJS   : ['public/js/*.js', 'public/modules/**/*.js'],
+    clientCSS  : ['public/modules/**/*.css'],
+    mochaTests : ['app/tests/**/*.js']
+};
+
 module.exports = function (grunt) {
     // load all grunt tasks
     require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
@@ -212,16 +222,13 @@ module.exports = function (grunt) {
         },
         nodemon   : {
             dev: {
-                script     : 'server.js',
-                options    : {
-                    nodeArgs: ['--debug']
-                },
-                cwd        : __dirname,
-                ignore     : ['node_modules/**'],
-                ext        : 'js,coffee',
-                watch      : ['server'],
-                delay      : 1000,
-                legacyWatch: true
+                script : 'server.js',
+                options: {
+                    nodeArgs: ['--debug'],
+                    ext     : 'js,html',
+                    watch   : watchFiles.serverViews.concat(watchFiles.serverJS)
+
+                }
             }
         },
         coffee    : {
