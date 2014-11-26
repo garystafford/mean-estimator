@@ -222,14 +222,7 @@ module.exports = function (grunt) {
                 script : 'server.js',
                 options: {
                     nodeArgs: ['--debug'],
-                    callback: function (nodemon) {
-                        nodemon.on('log', function (event) {
-                            console.log(event.colour);
-                        });
-                    },
-                    cwd     : __dirname,
                     ext     : 'js,html',
-                    ignore  : ['**/node_modules/*', '**/.git/*'],
                     watch   : watchFiles.serverViews.concat(watchFiles.serverJS)
                 }
             }
