@@ -2,17 +2,17 @@
 
 var path = require('path');
 
-// Unified Watch Object
-var watchFiles = {
-    serverViews: ['app/views/**/*.*'],
-    serverJS   : ['gruntfile.js', 'server.js', 'config/**/*.js', 'app/**/*.js'],
-    clientViews: ['public/modules/**/views/**/*.html'],
-    clientJS   : ['public/js/*.js', 'public/modules/**/*.js'],
-    clientCSS  : ['public/modules/**/*.css'],
-    mochaTests : ['app/tests/**/*.js']
-};
-
 module.exports = function (grunt) {
+    // Unified Watch Object
+    var watchFiles = {
+        serverViews: ['app/views/**/*.*'],
+        serverJS   : ['gruntfile.js', 'server.js', 'config/**/*.js', 'app/**/*.js'],
+        clientViews: ['public/modules/**/views/**/*.html'],
+        clientJS   : ['public/js/*.js', 'public/modules/**/*.js'],
+        clientCSS  : ['public/modules/**/*.css'],
+        mochaTests : ['app/tests/**/*.js']
+    };
+
     // load all grunt tasks
     require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
@@ -36,8 +36,8 @@ module.exports = function (grunt) {
 
     // Project Configuration
     grunt.initConfig({
-        yeoman       : yeomanConfig,
-        clean        : {
+        yeoman          : yeomanConfig,
+        clean           : {
             dist  : {
                 files: [{
                     dot: true,
@@ -50,26 +50,25 @@ module.exports = function (grunt) {
             },
             server: '.tmp'
         },
-        useminPrepare: {
+        useminPrepare   : {
             html   : '<%= yeoman.app %>/views/*.html',
             options: {
                 dest: '<%= yeoman.dist %>'
             }
         },
-
-        usemin    : {
+        usemin          : {
             html   : ['<%= yeoman.dist %>/{,*/}*.html'],
             css    : ['<%= yeoman.dist %>/css/{,*/}*.css'],
             options: {
                 dirs: ['<%= yeoman.dist %>']
             }
         },
-        cdnify    : {
+        cdnify          : {
             dist: {
                 html: ['<%= yeoman.dist %>/*.html']
             }
         },
-        ngmin     : {
+        ngmin           : {
             dist: {
                 files: [{
                     expand: true,
@@ -79,14 +78,14 @@ module.exports = function (grunt) {
                 }]
             }
         },
-        cssmin    : {
+        cssmin          : {
             build: {
                 files: {
                     '<%= yeoman.dist %>/application.css': ['<%= yeoman.dist %>/css/*.css']
                 }
             }
         },
-        htmlmin   : {
+        htmlmin         : {
             dist: {
                 options: {
                     /*removeCommentsFromCDATA: true,
@@ -107,7 +106,7 @@ module.exports = function (grunt) {
                 }]
             }
         },
-        imagemin  : {
+        imagemin        : {
             dist: {
                 files: [{
                     expand: true,
@@ -117,7 +116,7 @@ module.exports = function (grunt) {
                 }]
             }
         },
-        uglify    : {
+        uglify          : {
             build: {
                 options: {
                     mangle: false
@@ -129,17 +128,7 @@ module.exports = function (grunt) {
                 }
             }
         },
-        //    uglify: {
-        //      dist: {
-        //        files: {
-        //          '<%= yeoman.dist %>/js/scripts.js': [
-        //            '<%= yeoman.dist %>/js/scripts.js'
-        //          ]
-        //        }
-        //      }
-        //    },
-        // Put files not handled in other tasks here
-        copy      : {
+        copy            : {
             dist: {
                 files: [{
                     expand: true,
@@ -164,7 +153,7 @@ module.exports = function (grunt) {
                 }]
             }
         },
-        rev       : {
+        rev             : {
             dist: {
                 files: {
                     src: [
@@ -177,130 +166,125 @@ module.exports = function (grunt) {
             }
         },
         // start original project tasks
-        pkg       : grunt.file.readJSON('package.json'),
-        watch     : {
+        pkg             : grunt.file.readJSON('package.json'),
+        watch           : {
             serverViews: {
-                files  : ['app/views/**'],
+                files  : watchFiles.serverViews,
                 options: {
                     livereload: true
                 }
             },
             serverJS   : {
-                files  : ['gruntfile.js', 'server.js', 'config/**/*.js', 'app/**/*.js'],
+                files  : watchFiles.serverJS,
                 tasks  : ['jshint'],
                 options: {
                     livereload: true
                 }
             },
             clientViews: {
-                files  : ['public/modules/**/views/*.html'],
+                files  : watchFiles.clientViews,
                 options: {
                     livereload: true
                 }
             },
             clientJS   : {
-                files  : ['public/js/**/*.js', 'public/modules/**/*.js'],
+                files  : watchFiles.clientJS,
                 tasks  : ['jshint'],
                 options: {
                     livereload: true
                 }
             },
             clientCSS  : {
-                files  : ['public/**/css/*.css'],
+                files  : watchFiles.clientCSS,
                 options: {
                     livereload: true
                 }
             }
         },
-        jshint    : {
+        jshint          : {
             all: {
-                src    : ['gruntfile.js', 'server.js', 'config/**/*.js', 'app/**/*.js', 'public/js/**/*.js', 'public/modules/**/*.js'],
+                src    : watchFiles.clientJS.concat(watchFiles.serverJS),
                 options: {
                     jshintrc: true
                 }
             }
         },
-        nodemon   : {
+        csslint         : {
+            options: {
+                csslintrc: '.csslintrc'
+            },
+            all    : {
+                src: watchFiles.clientCSS
+            }
+        },
+        nodemon         : {
             dev: {
                 script : 'server.js',
                 options: {
                     nodeArgs: ['--debug'],
+                    callback: function (nodemon) {
+                        nodemon.on('log', function (event) {
+                            console.log(event.colour);
+                        });
+                    },
+                    cwd     : __dirname,
                     ext     : 'js,html',
+                    ignore  : ['**/node_modules/*', '**/.git/*'],
                     watch   : watchFiles.serverViews.concat(watchFiles.serverJS)
-
                 }
             }
         },
-        coffee    : {
-            dist: {
-                files: [{
-                    expand: true,
-                    cwd   : '<%= yeoman.app %>/js',
-                    src   : '{,*/}*.coffee',
-                    dest  : '.tmp/js',
-                    ext   : '.js'
-                }]
-            },
-            test: {
-                files: [{
-                    expand: true,
-                    cwd   : 'test/spec',
-                    src   : '{,*/}*.coffee',
-                    dest  : '.tmp/spec',
-                    ext   : '.js'
-                }]
+        'node-inspector': {
+            custom: {
+                options: {
+                    'web-port'         : 1337,
+                    'web-host'         : 'localhost',
+                    'debug-port'       : 5858,
+                    'save-live-edit'   : true,
+                    'no-preload'       : true,
+                    'stack-trace-limit': 50,
+                    'hidden'           : []
+                }
             }
         },
-        concurrent: {
-            server : [
-                'coffee:dist'
-            ],
-            test   : [
-                'coffee'
-            ],
-            dist   : [
-                'coffee',
-                'imagemin',
-                'htmlmin'
-            ],
-            tasks  : ['nodemon', 'watch'],
+        concurrent      : {
+            default: ['nodemon', 'watch'],
+            debug  : ['nodemon', 'watch', 'node-inspector'],
             options: {
-                logConcurrentOutput: true
+                logConcurrentOutput: true,
+                limit              : 10
             }
         },
-        env       : {
+        env             : {
             test: {
                 NODE_ENV: 'test'
             }
         },
-        mochaTest : {
-            src    : ['app/tests/**/*.js'],
+        mochaTest       : {
+            src    : watchFiles.mochaTests,
             options: {
                 reporter: 'spec',
                 require : 'server.js'
             }
         },
-        karma     : {
+        karma           : {
             unit: {
                 configFile: 'karma.conf.js'
             }
         }
     });
 
-    //Load NPM tasks
-    //  grunt.loadNpmTasks('grunt-contrib-watch');
-    //  grunt.loadNpmTasks('grunt-contrib-jshint');
-    //  grunt.loadNpmTasks('grunt-mocha-test');
-    //  grunt.loadNpmTasks('grunt-karma');
-    //  grunt.loadNpmTasks('grunt-nodemon');
-    //  grunt.loadNpmTasks('grunt-concurrent');
-    //  grunt.loadNpmTasks('grunt-env');
-
     //Making grunt default to force in order not to break the project.
     grunt.option('force', true);
 
+    // Lint task(s).
+    grunt.registerTask('lint', ['jshint', 'csslint']);
+
     //Default task(s).
-    grunt.registerTask('default', ['jshint', 'concurrent']);
+    grunt.registerTask('default', ['lint', 'concurrent:default']);
+
+    // Debug task.
+    grunt.registerTask('debug', ['lint', 'concurrent:debug']);
 
     //Test task.
     grunt.registerTask('test', ['env:test', 'mochaTest', 'karma:unit']);
