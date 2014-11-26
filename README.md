@@ -67,9 +67,11 @@ Build and run with fig and Docker
 ```
 docker pull dockerfile/nodejs
 docker pull mongo
-fig build
-fig up
-fig ps # check your containers
+fig build && fig up
+```
+Alternate way to build and run with fig and Docker
+```
+. fig_start.sh # removes all exited containers!!!
 ```
 
 ###Preview
