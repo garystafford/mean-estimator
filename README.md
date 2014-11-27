@@ -6,6 +6,7 @@
 [![Codeship](https://codeship.com/projects/ffb358c0-4ab8-0132-efcb-7aa9472b8ea5/status)](https://codeship.com/projects/46419)
 
 ## MEAN Estimator
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/garystafford/mean-estimator?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 This project is built using MEAN.JS - Full-Stack JavaScript Using MongoDB, Express, AngularJS, and Node.js. 
 From Creators of MEAN.IO (<http://www.meanjs.org>). Sample MEAN application for estimating the cost and resources
