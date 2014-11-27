@@ -1,5 +1,5 @@
 {
-  "name": "meanestimator",
+  "name": "mean-estimator",
   "version": "0.4.0",
   "description": "Provides a platform for the collection of estimates for adding, updating, and removing application platforms in development and test environments.",
   "dependencies": {

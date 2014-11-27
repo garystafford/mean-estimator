@@ -1,3 +1,7 @@
+db:
+  image: mongo
+  ports:
+   - "27195:27195"
 web:
   build: .
   links:
@@ -6,11 +10,7 @@ web:
    - "3111:3111"
    - "35729:35729"
   volumes:
-   - ./app:/home/meanestimator/app
+   - ./app:/home/mean-estimator/app
   environment:
    NODE_ENV: development
    NODE_PORT: 3111
-db:
-  image: mongo
-  ports:
-   - "27195:27195"

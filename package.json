@@ -1,12 +1,12 @@
 {
-  "name": "meanestimator",
+  "name": "mean-estimator",
   "description": "Provides a platform for the collection of estimates for adding, updating, and removing application platforms in development and test environments.",
   "version": "0.4.0",
   "private": false,
   "author": "https://github.com/garystafford",
   "repository": {
     "type": "git",
-    "url": "https://github.com/garystafford/meanestimator.git"
+    "url": "https://github.com/garystafford/mean-estimator.git"
   },
   "engines": {
     "node": ">=0.10.16",

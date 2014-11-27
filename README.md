@@ -1,7 +1,7 @@
-[![TravisCI](https://travis-ci.org/garystafford/meanestimator.svg?branch=master)](https://travis-ci.org/garystafford/meanestimator)&nbsp;&nbsp;
-[![David Dependencies](https://david-dm.org/garystafford/meanestimator.png)](https://david-dm.org/garystafford/meanestimator)&nbsp;&nbsp;
-[![David Dev Dependencies](https://david-dm.org/garystafford/meanestimator/dev-status.png)](https://david-dm.org/garystafford/meanestimator#info=devDependencies)&nbsp;&nbsp;
-[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/garystafford/meanestimator?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)&nbsp;&nbsp;
+[![TravisCI](https://travis-ci.org/garystafford/mean-estimator.svg?branch=master)](https://travis-ci.org/garystafford/mean-estimator)&nbsp;&nbsp;
+[![David Dependencies](https://david-dm.org/garystafford/mean-estimator.png)](https://david-dm.org/garystafford/mean-estimator)&nbsp;&nbsp;
+[![David Dev Dependencies](https://david-dm.org/garystafford/mean-estimator/dev-status.png)](https://david-dm.org/garystafford/mean-estimator#info=devDependencies)&nbsp;&nbsp;
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/garystafford/mean-estimator?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)&nbsp;&nbsp;
 
 [![Codeship](https://codeship.com/projects/ffb358c0-4ab8-0132-efcb-7aa9472b8ea5/status)](https://codeship.com/projects/46419)
 
@@ -75,12 +75,12 @@ Alternate way to build and run with fig and Docker
 ```
 
 ###Preview
-![Main Page - Desktop](https://github.com/garystafford/meanestimator/blob/master/images/main_page.png?raw=true)
+![Main Page - Desktop](https://github.com/garystafford/mean-estimator/blob/master/images/main_page.png?raw=true)
 
-![Signup Page - Mobile](https://github.com/garystafford/meanestimator/blob/master/images/signup_mobile.png?raw=true)
+![Signup Page - Mobile](https://github.com/garystafford/mean-estimator/blob/master/images/signup_mobile.png?raw=true)
 
-![Main Page - Mobile](https://github.com/garystafford/meanestimator/blob/master/images/main_page_mobile.png?raw=true)
+![Main Page - Mobile](https://github.com/garystafford/mean-estimator/blob/master/images/main_page_mobile.png?raw=true)
 
-![Estimate Detail Page - Mobile](https://github.com/garystafford/meanestimator/blob/master/images/estimate_detail_mobile.png?raw=true)
+![Estimate Detail Page - Mobile](https://github.com/garystafford/mean-estimator/blob/master/images/estimate_detail_mobile.png?raw=true)
 
-![Estimate Edit Page - Mobile](https://github.com/garystafford/meanestimator/blob/master/images/edit_estimate_mobile.png?raw=true)
+![Estimate Edit Page - Mobile](https://github.com/garystafford/mean-estimator/blob/master/images/edit_estimate_mobile.png?raw=true)
