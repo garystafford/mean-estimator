@@ -1,8 +1,16 @@
+#!/bin/sh
+
+# Clean up / start up script
+# Gary A. Stafford
+# https://github.com/garystafford
+
 # remove all exited containers
-docker rm -f $(docker ps --filter 'status=Exited' -a) 
+echo "Removing all 'Exited' containers..."
+docker rm -f $(docker ps --filter 'status=Exited' -a) > /dev/null 2>&1
 
 # remove all <none> images
-docker rmi $(docker images | grep "^<none>" | awk "{print $3}") 
+echo "Removing all untagged images..."
+docker rmi $(docker images | grep "^<none>" | awk "{print $3}") > /dev/null 2>&1
 
-#fig
+# Build and start containers with fig
 fig build && fig up

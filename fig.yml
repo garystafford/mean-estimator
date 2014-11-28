@@ -1,7 +1,3 @@
-db:
-  image: mongo
-  ports:
-   - "27195:27195"
 web:
   build: .
   links:
@@ -14,3 +10,7 @@ web:
   environment:
    NODE_ENV: development
    NODE_PORT: 3111
+db:
+  image: mongo
+  ports:
+   - "27195:27195"

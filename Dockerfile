@@ -29,12 +29,13 @@ ADD . /home/mean-estimator
 # currently only works for development
 ENV NODE_ENV development
 
-#Just checking...
-RUN which node; node --version; which npm; npm --version
+#RUN which node; node --version; which npm; npm --version
+RUN mkdir -p /startup
+ADD wait_mongo_start.sh /startup/wait_mongo_start.sh
 
 # Port 3111 for server
 # Port 35729 for livereload
 EXPOSE 3111 35729
 
-CMD ["grunt"]
+CMD /bin/sh /startup/wait_mongo_start.sh
 
