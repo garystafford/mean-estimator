@@ -243,6 +243,7 @@ module.exports = function (grunt) {
         concurrent      : {
             default: ['nodemon', 'watch'],
             debug  : ['nodemon', 'watch', 'node-inspector'],
+            dist   : ['nodemon'],
             options: {
                 logConcurrentOutput: true,
                 limit              : 10
@@ -273,22 +274,21 @@ module.exports = function (grunt) {
     // Lint task(s).
     grunt.registerTask('lint', ['jshint', 'csslint']);
 
-    //Default task(s).
+    // Default task(s).
     grunt.registerTask('default', ['lint', 'concurrent:default']);
 
     // Debug task.
     grunt.registerTask('debug', ['lint', 'concurrent:debug']);
 
-    //Test task.
+    // Test task.
     grunt.registerTask('test', ['env:test', 'mochaTest', 'karma:unit']);
 
+    // WIP - not working yet...
     grunt.registerTask('build', [
         'clean:dist',
         'useminPrepare',
-        'concurrent:dist',
         'copy',
         'cdnify',
-        'ngmin',
         'cssmin',
         'uglify',
         'rev',
