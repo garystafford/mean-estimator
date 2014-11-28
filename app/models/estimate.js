@@ -3,11 +3,10 @@
 /**
  * Module dependencies.
  */
-var mongoose = require('mongoose'),
-Schema       = mongoose.Schema;
-
-var Resource = require('../models/resource');
-var Infrastructure = require('../models/infrastructure');
+var mongoose   = require('mongoose'),
+Schema         = mongoose.Schema,
+Resource       = require('./resource'),
+Infrastructure = require('./infrastructure');
 
 /**
  * Estimate Schema
@@ -45,8 +44,8 @@ var EstimateSchema = new Schema({
         trim    : true,
         required: 'Type cannot be blank'
     },
-    resources      : [Resource.schema],
-    infrastructures: [Infrastructure.schema]
+    resources      : [mongoose.model('Resource').schema],
+    infrastructures: [mongoose.model('Infrastructure').schema]
 });
 
 mongoose.model('Estimate', EstimateSchema);
