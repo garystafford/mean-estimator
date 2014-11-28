@@ -70,8 +70,8 @@ docker pull mongo
 fig build && fig up
 ```
 Alternate way to build and run with fig and Docker
-NOTE: script removes all exited containers and untagged images
 Builds two containers (`db_1` and `web_1`) using `fig.yml` file
+NOTE: script removes all exited containers and untagged images
 ```
 . fig_start.sh
 ```
